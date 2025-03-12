@@ -1,10 +1,10 @@
 
-import slide1 from "../assets/Slider1/slide1.png";
+import slide1 from "../assets/Slider1/slide2.png";
 
 
-const Biten = [
+const Devam = [
     {
-        kategori: "Biten",
+        kategori: "Devam",
         İsim: "Ekip Grup Bina",
         Açıklama: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt hic quo aliquam adipisci, qui temporibus corrupti optio labore quidem.",
         img: slide1,
@@ -58,4 +58,4 @@ const Biten = [
 
 
 ]
-export default Biten;
+export default Devam;

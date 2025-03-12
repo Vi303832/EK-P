@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 import ProjectSlide from './ProjSlide'
 function ProjeDisplay() {
+
+    let [selected, setselected] = useState("Biten")
+
+
     return (
         <div className='mx-30 '>
             <div className='flex flex-col justify-start text-white  '>
@@ -16,13 +20,13 @@ function ProjeDisplay() {
                 </div>
 
                 <div className='flex gap-10 '>
-                    <div className='border-2 border-white px-4 py-2 rounded '>
+                    <div onClick={() => setselected("Biten")} className='border-2 border-white px-4 py-2 rounded '>
                         Biten Projeler
                     </div>
-                    <div className='border-2 border-white px-4 py-2 rounded '>
+                    <div onClick={() => setselected("Devam")} className='border-2 border-white px-4 py-2 rounded '>
                         Devam Eden Projeler
                     </div>
-                    <div className=' px-4 py-2 rounded '>
+                    <div onClick={() => setselected("Gelecek")} className=' px-4 py-2 rounded '>
                         Gelecek Projeler
                     </div>
 
@@ -31,7 +35,7 @@ function ProjeDisplay() {
 
                 <div className='my-20  '>
 
-                    <ProjectSlide />
+                    <ProjectSlide selected={selected} />
                     <div className=' overflow-hidden relative flex gap-5'>
 
 

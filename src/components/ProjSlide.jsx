@@ -6,16 +6,33 @@ import slide1 from "../assets/Slider1/slide1.png";
 import slide2 from "../assets/Slider1/slide2.png";
 import slide3 from "../assets/Slider1/slide3.jpeg";
 import Biten from "./Biten"
-
-
-let selected = "Biten";
-
-const ProjectSlide = () => {
+import Devam from "./Devam"
+import Gelecek from "./Gelecek"
 
 
 
-    const [Slides, setSlides] = useState(Biten);
 
+
+const ProjectSlide = ({ selected }) => {
+
+
+    const [Slides, setSlides] = useState([]);
+
+    useEffect(() => {
+        switch (selected) {
+            case "Biten":
+                setSlides(Biten);
+                break;
+            case "Devam":
+                setSlides(Devam);
+                break;
+            case "Gelecek":
+                setSlides(Gelecek);
+                break;
+            default:
+                setSlides([]);
+        }
+    }, [selected]);
 
 
     return (
@@ -28,7 +45,7 @@ const ProjectSlide = () => {
             className="h-full w-full "
         >
 
-            {Slides.map((slide, index) => (
+            {Slides && Slides.map((slide, index) => (
 
 
                 <SwiperSlide key={index}>
