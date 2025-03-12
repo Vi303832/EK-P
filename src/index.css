@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme{
+
+
+--color-mavi:#0470B8;
+--color-kırmızı:#EE1B24;
+--color-gri:#EE1B24;
+--color-lacivert:#1C2B39;
+}
