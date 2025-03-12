@@ -4,6 +4,7 @@ import SliderBg from './SliderBg'
 import Faaliyet from './Faaliyet'
 import ProjeDisplay from './ProjeDisplay'
 import NedenBiz from './NedenBiz'
+import ContactDisplay from './ContactDisplay'
 
 
 function Home() {
@@ -48,7 +49,9 @@ function Home() {
             <div className='bg-black'>
                 <ProjeDisplay />
             </div>
-
+            <div>
+                <ContactDisplay />
+            </div>
 
 
 

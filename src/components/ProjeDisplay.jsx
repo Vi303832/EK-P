@@ -1,61 +1,47 @@
 import React from 'react'
-import slide1 from "../assets/Slider1/slide1.png"
 
+
+import ProjectSlide from './ProjSlide'
 function ProjeDisplay() {
     return (
-        <div className='mx-30 pl-20 '>
-            <div className='flex flex-col justify-start text-white  px-10'>
-                <div className=' text-4xl  pt-10 relative top-5 left-10'>
-                    Projelerimiz
+        <div className='mx-30 '>
+            <div className='flex flex-col justify-start text-white  '>
+                <div className=' pb-10 pt-20'>
+                    <div className='opacity-70 py-2'>Galeri</div>
+                    <div className=' text-4xl  '>
+                        Projelerimiz
+                    </div>
+
+
                 </div>
 
-                <div className=' p-20 flex flex-col gap-10'>
-
-
-                    <div className='w-full h-full flex items-center  justify-center gap-2 '>
-                        <div>{"<"}</div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div>{">"}</div>
+                <div className='flex gap-10 '>
+                    <div className='border-2 border-white px-4 py-2 rounded '>
+                        Biten Projeler
                     </div>
-                    <div className='w-full h-full flex items-center  justify-center gap-2 '>
-                        <div>{"<"}</div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div className='p-25 bg-red-500 relative    '>
-                            <img src={slide1} className='w-full h-full z-10 top-0 left-0  absolute' />
-                        </div>
-                        <div>{">"}</div>
+                    <div className='border-2 border-white px-4 py-2 rounded '>
+                        Devam Eden Projeler
+                    </div>
+                    <div className=' px-4 py-2 rounded '>
+                        Gelecek Projeler
+                    </div>
+
+
+                </div>
+
+                <div className='my-20  '>
+
+                    <ProjectSlide />
+                    <div className=' overflow-hidden relative flex gap-5'>
+
+
+
                     </div>
 
 
 
 
                 </div>
-
 
 
             </div>
