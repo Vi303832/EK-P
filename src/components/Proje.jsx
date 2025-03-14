@@ -7,17 +7,29 @@ const Proje = () => {
 
 
     // id'yi kullanarak ilgili projeyi bul
-    const project = Biten.find(item => item.id === id);
+    const p = Biten.find(item => item.id === id);
 
-    if (!project) {
+    if (!p) {
         return <div>Proje bulunamadı</div>;
     }
 
     return (
         <div>
-            <h1>{project.İsim}</h1>
-            <p>{project.Açıklama}</p>
-            <img src={project.img} alt={project.İsim} />
+            <div className="py-30 flex justify-center text-4xl bg-mavi">
+                {p.kategori}
+            </div>
+            <div className="p-10 flex gap-5">
+                <div className="w-[80%]">
+                    <img src={p.img} alt="projefotosu" />
+                </div>
+                <div className="flex flex-col items-center gap-10 p-10 w-[50%]">
+                    <div className="text-3xl">{p.İsim}</div>
+                    <div>{p.Bilgi}</div>
+                </div>
+
+
+            </div>
+
         </div>
     );
 

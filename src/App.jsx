@@ -26,8 +26,33 @@ function App() {
             </>
 
           } />
-          <Route path='/Biten' element={<BitenProjeler />} />
-          <Route path='/:id' element={<Proje />} />
+          <Route path='/BitenProjeler' element={
+
+            <>
+
+              <Header />
+
+
+
+
+              <BitenProjeler />
+              <Footer />
+            </>
+
+          } />
+          <Route path='/:id' element={
+
+
+
+            <>
+
+              <Header />
+
+              <Proje />
+              <Footer />
+            </>
+
+          } />
 
         </Routes>
 
