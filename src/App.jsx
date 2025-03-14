@@ -5,6 +5,8 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import BitenProjeler from './components/BitenProjeler'
 import Proje from './components/Proje'
+import GelecekProjeler from './components/GelecekProjeler'
+import DevamProjeler from './components/DevamEdenProjeler'
 
 function App() {
 
@@ -36,6 +38,34 @@ function App() {
 
 
               <BitenProjeler />
+              <Footer />
+            </>
+
+          } />
+          <Route path='/DevamEdenProjeler' element={
+
+            <>
+
+              <Header />
+
+
+
+
+              <DevamProjeler />
+              <Footer />
+            </>
+
+          } />
+          <Route path='/GelecekProjeler' element={
+
+            <>
+
+              <Header />
+
+
+
+
+              <GelecekProjeler />
               <Footer />
             </>
 

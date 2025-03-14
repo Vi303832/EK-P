@@ -1,13 +1,19 @@
 import { useParams } from "react-router-dom";
-import Biten from "./Biten"; // verinin olduğu dosya
+import Biten from "./Biten";
+import Devam from "./Devam";
+import Gelecek from "./Gelecek";
+
+
 
 const Proje = () => {
-    // useParams ile id'yi al
+
     const { id } = useParams();
 
+    // Biten, Devam ve Gelecek dizilerini birleştir
+    const tumProjeler = [...Biten, ...Devam, ...Gelecek];
 
     // id'yi kullanarak ilgili projeyi bul
-    const p = Biten.find(item => item.id === id);
+    const p = tumProjeler.find(item => item.id === id);
 
     if (!p) {
         return <div>Proje bulunamadı</div>;
