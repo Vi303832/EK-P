@@ -17,8 +17,8 @@ function Home() {
 
 
                     <SliderBg className="h-full w-full " />
-                    <hr className='absolute z-10 right-0 top-20 text-white opacity-90 h-20 w-[500px]'></hr>
-                    <div className='absolute  z-10 bottom-20 '>
+                    <hr className='absolute z-10 right-0 top-20 text-white opacity-90 h-20 w-[500px] max-xl:hidden'></hr>
+                    <div className='absolute  z-10 bottom-20 max-md:bottom-0 '>
                         <div className='p-20  flex flex-col gap-6'>
                             <div className='text-6xl text-white '>GLOBAL EXPERTİSE,<br />
                                 LOCAL COMMİTMENT
