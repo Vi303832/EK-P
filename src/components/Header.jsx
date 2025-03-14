@@ -12,20 +12,21 @@ function Header() {
                     <div className='flex w-full justify-end items-center h-full text-white opacity-90 gap-10'>
 
                         <div>
-                            Projeler
+                            Anasayfa
                         </div>
                         <div>
                             Projeler
                         </div>
                         <div>
-                            Projeler
+                            E-Katalog
                         </div>
                         <div>
-                            Projeler
+                            İletişim
                         </div>
                         <div>
-                            Projeler
+                            Hakkımızda
                         </div>
+
                     </div>
 
 

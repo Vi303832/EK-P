@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 
 import ProjectSlide from './ProjSlide'
+import Biten from './Biten'
 function ProjeDisplay() {
 
     let [selected, setselected] = useState("Biten")
@@ -20,13 +21,13 @@ function ProjeDisplay() {
                 </div>
 
                 <div className='flex gap-10 '>
-                    <div onClick={() => setselected("Biten")} className='border-2 border-white px-4 py-2 rounded '>
+                    <div onClick={() => setselected("Biten")} className={` cursor-pointer px-4 py-2 rounded ${selected == "Biten" ? "border-2 border-white " : " border-0 "} `}>
                         Biten Projeler
                     </div>
-                    <div onClick={() => setselected("Devam")} className='border-2 border-white px-4 py-2 rounded '>
+                    <div onClick={() => setselected("Devam")} className={` cursor-pointer px-4 py-2 rounded ${selected == "Devam" ? "border-2 border-white " : " border-0 "} `}>
                         Devam Eden Projeler
                     </div>
-                    <div onClick={() => setselected("Gelecek")} className=' px-4 py-2 rounded '>
+                    <div onClick={() => setselected("Gelecek")} className={` cursor-pointer px-4 py-2 rounded ${selected == "Gelecek" ? "border-2 border-white " : " border-0 "} `}>
                         Gelecek Projeler
                     </div>
 
