@@ -7,6 +7,7 @@ import BitenProjeler from './components/BitenProjeler'
 import Proje from './components/Proje'
 import GelecekProjeler from './components/GelecekProjeler'
 import DevamProjeler from './components/DevamEdenProjeler'
+import İletişim from "./components/İletişim"
 
 function App() {
 
@@ -83,6 +84,21 @@ function App() {
             </>
 
           } />
+
+          <Route path='/iletişim' element={
+            <>
+
+              <Header />
+
+
+
+
+              <İletişim />
+              <Footer />
+            </>
+
+          } />
+
 
         </Routes>
 

@@ -5,9 +5,16 @@ import Faaliyet from './Faaliyet'
 import ProjeDisplay from './ProjeDisplay'
 import NedenBiz from './NedenBiz'
 import ContactDisplay from './ContactDisplay'
+import { useNavigate } from 'react-router-dom'
 
 
 function Home() {
+
+    let navigate = useNavigate()
+
+
+
+
     return (
         <div className='min-h-screen w-full   '>
             <div className='h-screen w-full '>
@@ -26,8 +33,8 @@ function Home() {
                             <div className='text-xl text-white '>
                                 Laying in groundwork for a sustainable future
                             </div>
-                            <div className='bg-[#EE1B24] px-15 py-4 w-fit text-lg rounded text-white '>
-                                Learn More
+                            <div onClick={() => navigate("/iletişim")} className='bg-[#EE1B24] cursor-pointer px-15 py-4 w-fit text-lg rounded text-white '>
+                                Bize ulaş!
                             </div>
 
                         </div>
