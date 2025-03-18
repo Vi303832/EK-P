@@ -2,7 +2,7 @@ import React from 'react'
 
 function NedenBiz() {
     return (
-        <div className='my-20 mx-30 '>
+        <div className='my-20 mx-30  w-full overflow-hidden max-md:mx-0'>
             <div className='pl-20   text-4xl font-bold my-20'>Neden Biz?</div>
             <div className='flex flex-col gap-0 '>
                 {/*Üst*/}

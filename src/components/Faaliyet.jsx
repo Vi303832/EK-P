@@ -42,7 +42,7 @@ function NedenBiz() {
 
 
     return (
-        <div className='my-20 mx-30 flex gap-30 max-md:flex-col   '>
+        <div className='my-20 mx-30 flex gap-30 max-md:flex-col max-md:mx-0 w-full overflow-hidden   '>
             {/*Sol*/}
             <div className='w-[50%] flex flex-col  gap-10 '>
                 <div>

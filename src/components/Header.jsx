@@ -24,6 +24,8 @@ function Header() {
     let navigate = useNavigate()
 
     let handlenavigate = (path) => {
+        setbar(false)
+        setIsHovered(false)
 
         navigate(path)
 
@@ -32,14 +34,45 @@ function Header() {
 
     return (
         <div className='h-[70px] w-[98%] bg-transparent   absolute  z-20'>
-            <div className={`w-[102%]  absolute  duration-700 transition-all  bg-white ${bar ? " h-[50vh]" : "h-0"} `}>
-                <div className={`flex w-full items-center top-10 relative h-full transition-all duration-700 delay-100  text-black gap-10 flex-col ${bar ? "opacity-90" : "opacity-0 pointer-events-none"} `}>
-                    <div className='cursor-pointer relative'>
+            <div className={`w-[102%]  absolute  duration-700 transition-all hidden max-md:block  bg-white ${bar ? " h-[80vh]" : "h-0"}
+            
+            ${isHovered ? " h-[100vh]" : "h-0"}
+            
+            `}>
+
+                <div className={` flex  items-center top-10 relative h-full transition-all duration-700 delay-100  text-black gap-10 flex-col ${bar ? "opacity-90" : "opacity-0 pointer-events-none"} `}>
+                    <div
+                        onClick={() => handlenavigate("/")}
+                        className='cursor-pointer relative'>
                         Anasayfa
                     </div>
-                    <div className='cursor-pointer'>
+
+                    <a
+                        href='#proje'
+                        className={`cursor-pointer   ${isHovered ? "pb-5" : " pointer-events-auto"} `}
+                        onClick={() => handlenavigate("/")}
+                    >
                         Projeler
+                    </a>
+
+
+                    <div
+
+
+                    >
+                        Biten Projeler
                     </div>
+                    <div
+
+                    >
+                        Devam Eden Projeler
+                    </div>
+                    <div
+
+                    >
+                        Gelecek Projeler
+                    </div>
+
                     <div className='cursor-pointer'>
                         E-Katalog
                     </div>
@@ -52,6 +85,8 @@ function Header() {
                 </div>
 
             </div>
+            {/*Maxmd*/}
+
             <div className='w-full h-full flex '>
                 <div className='h-[120%] flex justify-center  px-20'>
                     <img src={Logo} onClick={() => handlenavigate("/")} className='h-full w-[90px] object-cover cursor-pointer ' />
@@ -71,30 +106,30 @@ function Header() {
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
 
-                            className={`flex flex-col items-end justify-center bg-green-400 ${isHovered ? "pb-5 pointer-events-auto" : "pointer-events-none"}  `}>
-                            <div
-
+                            className={`flex flex-col items-end justify-center  ${isHovered ? "pb-5 pointer-events-auto" : "pointer-events-none"}  `}>
+                            <a
+                                href='#proje'
                                 className={`cursor-pointer   ${isHovered ? "pb-5" : " pointer-events-auto"} `}
-
+                                onClick={() => handlenavigate("/")}
                             >
                                 Projeler
-                            </div>
+                            </a>
                             <div className={` flex flex-col gap-5 ${isHovered ? "h-auto" : "h-0"}`}>
                                 <div
 
 
-                                    onClick={() => navigate("/BitenProjeler")} className={` cursor-pointer  transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded  text-black  w-32  text-center top-0 " : " h-0 opacity-0 top-30  "}`}>
+                                    onClick={() => handlenavigate("/BitenProjeler")} className={` cursor-pointer  transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded  text-black  w-32  text-center top-0 " : " h-0 opacity-0 top-30  "}`}>
                                     Biten Projeler
                                 </div>
                                 <div
 
-                                    onClick={() => navigate("/DevamEdenProjeler")} className={` cursor-pointer  transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32   text-center top-0 " : " h-0 opacity-0 top-30 "}`}>
+                                    onClick={() => handlenavigate("/DevamEdenProjeler")} className={` cursor-pointer  transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32   text-center top-0 " : " h-0 opacity-0 top-30 "}`}>
                                     Devam Eden Projeler
                                 </div>
                                 <div
                                     ü
 
-                                    onClick={() => navigate("/GelecekProjeler")} className={` cursor-pointer transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32  text-center top-0 " : " h-0 opacity-0 top-30 "}`}>
+                                    onClick={() => handlenavigate("/GelecekProjeler")} className={` cursor-pointer transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32  text-center top-0 " : " h-0 opacity-0 top-30 "}`}>
                                     Gelecek Projeler
                                 </div>
 
@@ -163,7 +198,7 @@ function Header() {
 
 
 
-        </div>
+        </div >
     )
 }
 

@@ -3,7 +3,7 @@ import Logo from "../assets/EkipLogo.png"
 
 function Footer() {
     return (
-        <div className='bg-neutral-900 text-white px-30 py-20'>
+        <div className='bg-neutral-900 text-white px-30 py-20 w-full overflow-hidden'>
             <div className='flex justify-between'>
                 <div className='flex flex-col items-center gap-3 w-[300px]'>
                     <img src={Logo} className='w-[150px]' />

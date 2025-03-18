@@ -16,11 +16,11 @@ function Home() {
 
 
     return (
-        <div className='min-h-screen w-full   '>
-            <div className='h-screen w-full '>
-                <div className=' h-full -z-10 w-full  '>
+        <div className='min-h-screen w-full overflow-hidden   '>
+            <div className='h-screen w-full relative '>
+                <div className=' h-full -z-10 w-full  relative'>
 
-                    <span className='absolute h-full w-full bg-black top-0 z-10 opacity-30 pointer-events-none '></span>
+                    <span className='absolute h-full w-full bg-black top-0 z-10 opacity-30 pointer-events-none overflow-hidden'></span>
 
 
                     <SliderBg className="h-full w-full " />
@@ -46,16 +46,16 @@ function Home() {
             </div>
 
 
-            <div>
+            <div className=''>
                 <Faaliyet />
             </div>
-            <div>
+            <div className=''>
                 <NedenBiz />
             </div>
-            <div className='bg-black'>
+            <div className='bg-black '>
                 <ProjeDisplay />
             </div>
-            <div>
+            <div className=''>
                 <ContactDisplay />
             </div>
 
