@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import men from "../assets/men.jpg"
+import { useNavigate } from 'react-router-dom';
 
 function NedenBiz() {
+
+    let navigate = useNavigate()
 
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -55,8 +58,8 @@ function NedenBiz() {
                     Gayrimenkul de dahil olmak üzere çok çeşitli inşaat hizmetleri sunuyoruz.
                     inşaat, kamu kurumları ve diğerleri. İnşaat projelerinizi mükemmel kalite ve detaylara gösterilen özenle yürütmek için deneyimimize ve profesyonelliğimize güvenin.
                 </div>
-                <div className='bg-lacivert px-10 py-2 w-fit text-lg rounded text-white '>
-                    İletişim
+                <div onClick={() => navigate("/Hakkımızda")} className='bg-lacivert px-10 py-2 w-fit text-lg rounded cursor-pointer text-white '>
+                    Dahası için
                 </div>
                 <div className=' '>
 

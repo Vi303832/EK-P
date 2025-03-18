@@ -8,6 +8,7 @@ import Proje from './components/Proje'
 import GelecekProjeler from './components/GelecekProjeler'
 import DevamProjeler from './components/DevamEdenProjeler'
 import İletişim from "./components/İletişim"
+import Hakkımızda from "./components/Hakkımızda"
 
 function App() {
 
@@ -94,6 +95,20 @@ function App() {
 
 
               <İletişim />
+              <Footer />
+            </>
+
+          } />
+          <Route path='/Hakkımızda' element={
+
+            <>
+
+              <Header />
+
+
+
+
+              <Hakkımızda />
               <Footer />
             </>
 

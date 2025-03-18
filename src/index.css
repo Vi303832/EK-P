@@ -9,3 +9,8 @@
 --color-lacivert:#1C2B39;
 --color-altin:#C9A227;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+  

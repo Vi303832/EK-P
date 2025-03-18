@@ -13,7 +13,7 @@ function ProjeDisplay() {
             <div className='flex flex-col justify-start text-white  '>
                 <div className=' pb-10 pt-20'>
                     <div className='opacity-70 py-2'>Galeri</div>
-                    <div className=' text-4xl  '>
+                    <div id='proje' className=' text-4xl  '>
                         Projelerimiz
                     </div>
 

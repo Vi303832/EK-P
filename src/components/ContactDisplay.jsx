@@ -1,7 +1,10 @@
 import React from 'react'
 import CBg from "../assets/CBg.jpg"
+import { useNavigate } from 'react-router-dom';
 
 function ContactDisplay() {
+    let navigate = useNavigate()
+
     return (
         <div className='bg-black px-10 pt-30'>
             <div className='bg-yellow-50 h-[30rem] relative w-full '>
@@ -12,7 +15,7 @@ function ContactDisplay() {
                         <div className='text-4xl'>
                             Bize ulaşın ve vakit kaybetmeden fikrinizi gerçeğe çevirelim.
                         </div>
-                        <div className='bg-lacivert px-10 py-2 w-fit text-lg rounded text-white '>
+                        <div onClick={() => navigate("/iletişim")} className='bg-lacivert px-10 py-2 w-fit text-lg rounded text-white cursor-pointer '>
                             İletişim
                         </div>
                     </div>

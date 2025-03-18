@@ -68,26 +68,40 @@ function Header() {
                             Anasayfa
                         </div>
                         <div
-                            className={`cursor-pointer   `}
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
-                        >
-                            Projeler
-                        </div>
-                        <div
-                            className={` flex flex-col  items-center justify-start   gap-5 transition-all  relative py-1   ${isHovered ? "w-auto h-52 " : " w-0 h-0 overflow-hidden"}`}
 
-                        >
+                            className={`flex flex-col items-end justify-center bg-green-400 ${isHovered ? "pb-5 pointer-events-auto" : "pointer-events-none"}  `}>
+                            <div
 
-                            <div className={` transition-all duration-300  delay-300 relative py-1   ${isHovered ? "bg-white rounded mt-8 text-black  w-32  text-center left-0 " : " h-0 opacity-0 left-30 mt-8 w-0 "}`}>
-                                Biten Projeler
+                                className={`cursor-pointer   ${isHovered ? "pb-5" : " pointer-events-auto"} `}
+
+                            >
+                                Projeler
                             </div>
-                            <div className={` transition-all duration-300  delay-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32  text-center left-0 " : " h-0 opacity-0 left-30 w-0 "}`}>
-                                Devam Eden Projeler
+                            <div className={` flex flex-col gap-5 ${isHovered ? "h-auto" : "h-0"}`}>
+                                <div
+
+
+                                    onClick={() => navigate("/BitenProjeler")} className={` cursor-pointer  transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded  text-black  w-32  text-center top-0 " : " h-0 opacity-0 top-30  "}`}>
+                                    Biten Projeler
+                                </div>
+                                <div
+
+                                    onClick={() => navigate("/DevamEdenProjeler")} className={` cursor-pointer  transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32   text-center top-0 " : " h-0 opacity-0 top-30 "}`}>
+                                    Devam Eden Projeler
+                                </div>
+                                <div
+                                    ü
+
+                                    onClick={() => navigate("/GelecekProjeler")} className={` cursor-pointer transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32  text-center top-0 " : " h-0 opacity-0 top-30 "}`}>
+                                    Gelecek Projeler
+                                </div>
+
+
+
                             </div>
-                            <div className={`  transition-all duration-300  delay-300 relative py-1   ${isHovered ? "bg-white rounded text-black  w-32  text-center left-0 " : " h-0 opacity-0 left-30 w-0 "}`}>
-                                Gelecek Projeler
-                            </div>
+
 
                         </div>
 
@@ -96,7 +110,7 @@ function Header() {
                             E-Katalog
                         </div>
                         <div className='cursor-pointer'>
-                            İletişim    
+                            İletişim
                         </div>
                         <div className='cursor-pointer'>
                             Hakkımızda
@@ -107,7 +121,7 @@ function Header() {
 
                     <div className='flex w-full justify-end items-center h-full text-white opacity-90 gap-10 max-xl:hidden'>
 
-                        <div className='cursor-pointer w-16 hover:relative hover:top-1 hover:h-10 h-5'>
+                        <div onClick={() => navigate("/")} className='cursor-pointer w-16 hover:relative hover:top-1 hover:h-10 h-5'>
                             Anasayfa
                         </div>
 
@@ -117,7 +131,9 @@ function Header() {
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                         >
-                            <div className='max-xl:hidden '>Projeler</div>
+                            <a
+                                onClick={() => navigate("/")}
+                                href='#proje' className='max-xl:hidden '>Projeler</a>
                             <div onClick={() => navigate("/BitenProjeler")} className={` max-xl:hidden  transition-all duration-300 relative py-1   ${isHovered ? "bg-white rounded mt-8 text-black  w-32  text-center left-0 " : " h-0 opacity-0 left-30 mt-8 "}`}>
                                 Biten Projeler
                             </div>
@@ -129,10 +145,10 @@ function Header() {
                             </div>
                         </div>
 
-                        <div className='cursor-pointer hover:relative hover:top-1   w-16 hover:h-10 h-5'>
+                        <div onClick={() => navigate("/iletişim")} className='cursor-pointer hover:relative hover:top-1   w-16 hover:h-10 h-5'>
                             İletişim
                         </div>
-                        <div className='cursor-pointer hover:relative hover:top-1 hover:h-10 w-16 h-5'>
+                        <div onClick={() => navigate("/Hakkımızda")} className='cursor-pointer hover:relative hover:top-1 hover:h-10 w-16 h-5'>
                             Hakkımızda
                         </div>
                     </div>
