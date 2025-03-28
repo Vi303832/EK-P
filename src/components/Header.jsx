@@ -58,21 +58,24 @@ function Header() {
                         >
                             Projeler
                         </a>
-                        <div className={`flex  items-center  overflow-hidden transition-all duration-300 delay-100 cursor-pointer ${display ? "h-15 " : "h-0"}`}
+                        <div className={`flex  items-center overflow-hidden transition-all duration-300 delay-100 cursor-pointer ${display ? "h-20 " : "h-0"}`}
                             onClick={() => handlenavigate("/BitenProjeler")}
                         >
                             Biten Projeler
                         </div>
-                        <div className={`  overflow-hidden transition-all duration-300 delay-300 cursor-pointer ${display ? "h-10" : "h-0"}`}
+                        <div className={`flex  items-center  overflow-hidden transition-all  duration-300 delay-300 cursor-pointer ${display ? "h-20" : "h-0"}`}
                             onClick={() => handlenavigate("/DevamEdenProjeler")}
                         >
                             Devam Eden Projeler
                         </div>
-                        <div className={` overflow-hidden transition-all duration-300 delay-500 cursor-pointer ${display ? "h-10" : "h-0"}`}
+                        <div className={`flex  items-center overflow-hidden transition-all    duration-300 delay-500 cursor-pointer ${display ? "h-20" : "h-0"}`}
                             onClick={() => handlenavigate("/GelecekProjeler")}
                         >
                             Gelecek Projeler
+                            <br></br>
+
                         </div>
+
 
 
 
@@ -95,7 +98,7 @@ function Header() {
 
 
             <div className='w-full h-full flex '>
-                <div className='h-[120%] flex justify-center  px-20'>
+                <div className='h-[120%] flex justify-center  px-20 max-md:px-10'>
                     <img src={Logo} onClick={() => handlenavigate("/")} className='h-full w-[90px] max-md:w-[150px] object-cover  cursor-pointer ' />
                 </div>
                 <div className='relative  right-10 max-xl:top-5 w-full max-md:top-8 '>
@@ -112,7 +115,7 @@ function Header() {
                                 <IoMdClose />
                             </div>
                             <div
-                                className={`transition-opacity duration-300 ease-in-out ${bar ? "opacity-0" : "opacity-100"}`}
+                                className={`transition-opacity duration-300 text-white  ease-in-out ${bar ? "opacity-0" : "opacity-90"}`}
 
                             >
                                 <FaBars />
@@ -170,7 +173,7 @@ function Header() {
 
                     <div className='flex w-full justify-end items-center h-full text-white opacity-90 gap-10 max-xl:hidden'>
 
-                        <div onClick={() => navigate("/")} className='cursor-pointer w-16 hover:relative hover:top-1 hover:h-10 h-5'>
+                        <div onClick={() => navigate("/")} className='cursor-pointer hover:relative hover:top-1   w-16 hover:h-10 h-5'>
                             Anasayfa
                         </div>
 

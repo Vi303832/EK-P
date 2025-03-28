@@ -9,7 +9,7 @@ function ProjeDisplay() {
 
 
     return (
-        <div className='mx-30 '>
+        <div className='mx-30 max-[1440px]:mx-20  max-lg:mx-10 max-md:mx-5'>
             <div className='flex flex-col justify-start text-white  '>
                 <div className=' pb-10 pt-20'>
                     <div className='opacity-70 py-2'>Galeri</div>
@@ -34,7 +34,7 @@ function ProjeDisplay() {
 
                 </div>
 
-                <div className='my-20  '>
+                <div className='my-20   '>
 
                     <ProjectSlide selected={selected} />
                     <div className=' overflow-hidden relative flex gap-5'>

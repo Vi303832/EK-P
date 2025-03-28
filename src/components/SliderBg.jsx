@@ -10,9 +10,9 @@ import slide3 from "../assets/Slider1/slide3.jpeg";
 const SliderBg = () => {
     return (
         <Swiper
-            modules={[Autoplay, Pagination]}
+            modules={[Autoplay,]}
             autoplay={{ delay: 5000 }}
-            pagination={{ clickable: true }}
+
             spaceBetween={0}
             loop={true}
             className="h-full w-full"
