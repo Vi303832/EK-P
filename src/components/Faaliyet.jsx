@@ -42,9 +42,9 @@ function NedenBiz() {
 
 
     return (
-        <div className='my-20 mx-30 flex gap-30 max-md:flex-col max-md:mx-0 w-full overflow-hidden   '>
+        <div className='my-20  justify-center flex gap-20 max-md:flex-col max-md:mx-0 w-full overflow-hidden   '>
             {/*Sol*/}
-            <div className='w-[50%] flex flex-col  gap-10 '>
+            <div className='w-[50%] flex flex-col  gap-10 max-md:w-full max-md:mx-5 '>
                 <div>
                     <div className=' opacity-40 font-bold py-2'>
                         Hizmetlerimiz nelerdir?
@@ -54,7 +54,7 @@ function NedenBiz() {
                     </div>
                 </div>
 
-                <div className='w-full text-lg opacity-60 '>
+                <div className='w-full text-lg opacity-60 max-md:w-[80%] '>
                     Gayrimenkul de dahil olmak üzere çok çeşitli inşaat hizmetleri sunuyoruz.
                     inşaat, kamu kurumları ve diğerleri. İnşaat projelerinizi mükemmel kalite ve detaylara gösterilen özenle yürütmek için deneyimimize ve profesyonelliğimize güvenin.
                 </div>
@@ -69,7 +69,7 @@ function NedenBiz() {
             </div>
 
             {/*Sağ*/}
-            <div className=' w-[40%] '>
+            <div className=' w-[40%] max-md:w-full max-md:mx-5 '>
 
                 <div className="">
                     {sections.map((section, index) => (

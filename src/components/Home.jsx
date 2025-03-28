@@ -17,15 +17,15 @@ function Home() {
 
     return (
         <div className='min-h-screen w-full overflow-hidden   '>
-            <div className='h-screen w-full relative '>
+            <div className='h-screen w-full relative    '>
                 <div className=' h-full -z-10 w-full  relative'>
 
                     <span className='absolute h-full w-full bg-black top-0 z-10 opacity-30 pointer-events-none overflow-hidden'></span>
 
 
-                    <SliderBg className="h-full w-full " />
-                    <hr className='absolute z-10 right-0 top-20 text-white opacity-90 h-20 w-[500px] max-xl:hidden'></hr>
-                    <div className='absolute  z-10 bottom-20 max-md:bottom-0 '>
+                    <SliderBg className="h-full w-full pointer-events-auto " />
+                    <hr className='absolute z-10 right-0 top-20 text-white opacity-90 h-20 w-[500px] max-xl:hidden '></hr>
+                    <div className='absolute  z-10 bottom-20 max-md:bottom-0  '>
                         <div className='p-20  flex flex-col gap-6'>
                             <div className='text-6xl text-white '>GLOBAL EXPERTİSE,<br />
                                 LOCAL COMMİTMENT
