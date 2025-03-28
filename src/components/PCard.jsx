@@ -13,8 +13,8 @@ function PCard({ slide }) { // Destructure the slide prop
 
 
     return (
-        <div className='w-[20rem] h-[35rem]  max-[1100px]:w-[15rem] max-md:w-[12rem] max-sm:w-[15rem]  flex flex-col gap-3 items-start relative'>
-            <div className='w-[20rem] h-[20rem] max-[1100px]:w-[15rem] max-[1100px]:h-[15rem] max-md:w-[12rem] max-sm:w-[15rem]  max-sm:h-[15rem] max-md:h-[12rem] overflow-hidden  transition  transform duration-300 ease-linear hover:scale-105'> {/* overflow-hidden ekledik */}
+        <div className='w-[20rem] h-[35rem]  max-[1100px]:w-[15rem] max-md:w-[12rem] max-sm:w-[15rem] max-[504px]:!w-full max-[504px]:!h-[30rem]  flex flex-col gap-3 items-start relative'>
+            <div className='w-[20rem] h-[20rem] max-[1100px]:w-[15rem] max-[1100px]:h-[15rem] max-md:w-[12rem] max-sm:w-[15rem] max-[504px]:!h-[20rem]  max-sm:h-[15rem] max-md:h-[12rem] max-[504px]:!w-full overflow-hidden  transition  transform duration-300 ease-linear hover:scale-105'> {/* overflow-hidden ekledik */}
                 <div onClick={handlenav} className="overflow-hidden transition h-full w-full transform duration-300 ease-linear hover:scale-105"> {/* Yeni eklenen div */}
                     <img
                         src={img}

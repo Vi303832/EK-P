@@ -37,6 +37,9 @@ const ProjectSlide = ({ selected }) => {
             spaceBetween={20}
             breakpoints={{
                 0: {
+                    slidesPerView: 1,
+                },
+                504: {
                     slidesPerView: 2,
 
                 },
