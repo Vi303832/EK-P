@@ -22,18 +22,16 @@ function Home() {
 
                     <span className='absolute h-full w-full bg-black top-0 z-10 opacity-45 pointer-events-none overflow-hidden'></span>
 
+                    <span className='absolute  z-30 h-screen w-full flex items-center '>
 
-                    <SliderBg className="h-full w-full pointer-events-auto " />
-                    <hr className='absolute z-10 right-0 top-20 text-white opacity-90 h-20 w-[500px] max-xl:hidden '></hr>
-                    <div className='absolute  z-10 bottom-20 max-md:bottom-0 max-sm:bottom-30  '>
                         <div className='p-20 max-md:p-10  flex flex-col gap-6  '>
-                            <div className='text-6xl  text-white '>GLOBAL EXPERTİSE,<br />
+                            <div className='text-6xl max-md:text-5xl max-[380px]:!text-4xl  text-white '>GLOBAL EXPERTİSE,<br />
                                 LOCAL COMMİTMENT
                             </div>
-                            <div className='text-xl text-white '>
+                            <div className='text-xl max-[380px]:!text-lg text-white '>
                                 Laying in groundwork for a sustainable future
                             </div>
-                            <div onClick={() => navigate("/iletişim")} className='bg-[#EE1B24] cursor-pointer px-15 py-4 w-fit text-lg rounded text-white '>
+                            <div onClick={() => navigate("/iletişim")} className='bg-[#EE1B24] cursor-pointer  px-15 py-4 w-fit text-lg rounded text-white '>
                                 Bize ulaş!
                             </div>
 
@@ -41,8 +39,12 @@ function Home() {
 
 
 
-                    </div>
+                    </span>
+                    <SliderBg className="h-full w-full pointer-events-auto " />
+                    <hr className='absolute z-10 right-0 top-20 text-white opacity-90 h-20 w-[500px] max-xl:hidden  '></hr>
+
                 </div>
+
             </div>
 
 

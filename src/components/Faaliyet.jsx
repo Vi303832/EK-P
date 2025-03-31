@@ -49,12 +49,12 @@ function NedenBiz() {
                     <div className=' opacity-40 font-bold py-2'>
                         Hizmetlerimiz nelerdir?
                     </div>
-                    <div className='text-6xl'>
+                    <div className='text-6xl max-md:text-5xl'>
                         Faaliyet Alanlarımız
                     </div>
                 </div>
 
-                <div className='w-full text-lg opacity-60 max-md:w-[80%] '>
+                <div className='w-full text-lg opacity-60 max-md:w-[80%] max-md:text-[16px] '>
                     Gayrimenkul de dahil olmak üzere çok çeşitli inşaat hizmetleri sunuyoruz.
                     inşaat, kamu kurumları ve diğerleri. İnşaat projelerinizi mükemmel kalite ve detaylara gösterilen özenle yürütmek için deneyimimize ve profesyonelliğimize güvenin.
                 </div>
@@ -64,7 +64,7 @@ function NedenBiz() {
                 <div className=' '>
 
 
-                    <img className='relative h-[300px] object-cover w-[100%]' src="https://img.freepik.com/free-photo/handyman-construction-site-process-drilling-wall-with-perforator_169016-12109.jpg?t=st=1741698747~exp=1741702347~hmac=c020a5d735a833eb96322cd08755180baac73a65d1e920b9140ebe7bdc1cb4ce&w=1800 " />
+                    <img className='relative h-[300px] object-cover w-[100%] max-md:w-[90%]' src="https://img.freepik.com/free-photo/handyman-construction-site-process-drilling-wall-with-perforator_169016-12109.jpg?t=st=1741698747~exp=1741702347~hmac=c020a5d735a833eb96322cd08755180baac73a65d1e920b9140ebe7bdc1cb4ce&w=1800 " />
                 </div>
             </div>
 

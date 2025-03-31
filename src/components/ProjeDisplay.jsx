@@ -20,14 +20,17 @@ function ProjeDisplay() {
 
                 </div>
 
-                <div className='flex gap-10 '>
-                    <div onClick={() => setselected("Biten")} className={` cursor-pointer px-4 py-2 rounded ${selected == "Biten" ? "border-2 border-white " : " border-0 "} `}>
+                <div className='flex gap-10 max-sm:gap-5 max-sm:flex-col '>
+                    <div onClick={() => setselected("Biten")} className={` cursor-pointer px-4 py-2 rounded
+            flex items-center max-sm:w-fit
+                        
+                        ${selected == "Biten" ? "border-2 border-white " : " border-0 "} `}>
                         Biten Projeler
                     </div>
-                    <div onClick={() => setselected("Devam")} className={` cursor-pointer px-4 py-2 rounded ${selected == "Devam" ? "border-2 border-white " : " border-0 "} `}>
+                    <div onClick={() => setselected("Devam")} className={`max-sm:w-fit  flex items-center cursor-pointer px-4 py-2 rounded ${selected == "Devam" ? "border-2 border-white " : " border-0 "} `}>
                         Devam Eden Projeler
                     </div>
-                    <div onClick={() => setselected("Gelecek")} className={` cursor-pointer px-4 py-2 rounded ${selected == "Gelecek" ? "border-2 border-white " : " border-0 "} `}>
+                    <div onClick={() => setselected("Gelecek")} className={`max-sm:w-fit  flex items-center cursor-pointer px-4 py-2 rounded ${selected == "Gelecek" ? "border-2 border-white " : " border-0 "} `}>
                         Gelecek Projeler
                     </div>
 

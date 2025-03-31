@@ -44,7 +44,7 @@ function Header() {
             
             `}>
 
-                <div className={` flex  items-center top-10 relative h-full transition-all duration-700 delay-100  text-black gap-10 flex-col ${bar ? "opacity-90" : "opacity-0 pointer-events-none"} `}>
+                <div className={` flex  items-center top-30 relative h-full transition-all duration-700 delay-100  text-black gap-10 flex-col ${bar ? "opacity-90" : "opacity-0 pointer-events-none"} `}>
                     <div
                         onClick={() => handlenavigate("/")}
                         className='cursor-pointer relative'>
@@ -58,7 +58,7 @@ function Header() {
                         >
                             Projeler
                         </a>
-                        <div className={`flex  items-center overflow-hidden transition-all duration-300 delay-100 cursor-pointer ${display ? "h-20 " : "h-0"}`}
+                        <div className={`flex  items-center overflow-hidden transition-all duration-300 delay-100 cursor-pointer ${display ? "h-20 mt-5 " : "h-0 mt-0"}`}
                             onClick={() => handlenavigate("/BitenProjeler")}
                         >
                             Biten Projeler
