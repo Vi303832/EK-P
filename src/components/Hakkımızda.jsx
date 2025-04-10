@@ -7,7 +7,7 @@ function Hakkımızda() {
     }, []);
     return (
         <div className='font-Poppins'>
-            <div className='py-30 bg-gradient-to-r from-gray-600 to-gray-500 text-white justify-center flex text-4xl items-center'>
+            <div className='py-32 bg-gradient-to-r from-gray-600 to-gray-500 text-white justify-center flex text-4xl items-center'>
                 <FaBuilding className="mr-4" /> Hakkımızda
             </div>
 
