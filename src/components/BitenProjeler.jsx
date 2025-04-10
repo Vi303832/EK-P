@@ -3,33 +3,31 @@ import PCard from './PCard'
 import Biten from './Biten'
 import P2Card from './P2Card'
 import "./Biten.js"
-
+import { FaCheckCircle } from 'react-icons/fa'
 
 function BitenProjeler() {
 
     useEffect(() => {
-        // Sayfa değiştiğinde en üste kaydır
         window.scrollTo(0, 0);
     }, []);
 
-
-
     return (
-        <div>
-            <div className='py-30 bg-gray-500 text-white justify-center flex text-4xl' >Biten Projelerimiz</div>
-            <div className='p-10  flex flex-wrap justify-center gap-1* '>
-                {Biten && Biten.map((props, index) => (
-
-
-                    <P2Card props={props} />
-
-
-
-                ))}
-
+        <div className="min-h-screen bg-gray-50 font-Poppins">
+            <div className='py-32 bg-gradient-to-r from-gray-600 to-gray-500 text-white flex items-center justify-center text-4xl font-semibold shadow-lg'>
+                <FaCheckCircle className="mr-4" />
+                <h1>Biten Projelerimiz</h1>
             </div>
 
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                    {Biten && Biten.map((props, index) => (
+                        <div key={index} className="transform hover:scale-105 transition-transform duration-300">
+                            <P2Card props={props} />
 
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

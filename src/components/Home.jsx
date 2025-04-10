@@ -10,8 +10,8 @@ function Home() {
     const navigate = useNavigate()
 
     const handleContactClick = () => {
-        navigate("/iletisim");
-        console.log("Button clicked, navigating to /iletisim");
+        navigate("/iletişim");
+
     }
 
     return (

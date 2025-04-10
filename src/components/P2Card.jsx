@@ -1,41 +1,52 @@
 import React from 'react'
 import { useNavigate } from "react-router";
 
-
 function P2Card({ props }) {
-
     let { kategori, İsim, Açıklama, img, link } = props
-
     let navigate = useNavigate()
 
-
     let handlenav = () => {
-
         navigate(link)
-
     };
 
     return (
-        <div className='px-5 py-10 bg-white'>
-
-            <div className='w-[20rem] h-[20rem] overflow-hidden  transition  transform duration-300 ease-linear hover:scale-105'> {/* overflow-hidden ekledik */}
-                <div onClick={handlenav} className="overflow-hidden transition h-full w-full     transform duration-300 ease-linear hover:scale-105"> {/* Yeni eklenen div */}
+        <div className='h-full bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col'>
+            <div className='relative group cursor-pointer h-[300px]' onClick={handlenav}>
+                <div className='w-full h-full overflow-hidden'>
                     <img
                         src={img}
-
-                        className='w-full h-full object-cover transition-transform duration-300 hover:scale-110' /* Tailwind CSS ile hover efekti */
+                        alt={İsim}
+                        className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 '
+                        loading="lazy"
                     />
                 </div>
-            </div>
-            <div className='text-altin w-[20rem]  '>
-                {kategori}
+
             </div>
 
-            <div className='text-xl w-[20rem]'>
-                {İsim}
-            </div>
-            <div className='opacity-80 w-[20rem]'>
-                {Açıklama}
+            <div className='p-6 flex-1 flex flex-col justify-between'>
+                <div className='space-y-3'>
+                    <div className='text-sm font-medium text-[#EE1B24] tracking-wider uppercase'>
+                        {kategori}
+                    </div>
+
+                    <h3 className='text-xl font-semibold text-gray-800 hover:text-[#EE1B24] transition-colors duration-300 line-clamp-2'>
+                        {İsim}
+                    </h3>
+
+                    <p className='text-gray-600 text-sm leading-relaxed line-clamp-3'>
+                        {Açıklama}
+                    </p>
+                </div>
+
+                <button
+                    onClick={handlenav}
+                    className='mt-4 text-[#EE1B24] font-medium hover:text-red-700 transition-colors duration-300 flex items-center'
+                >
+                    Detayları Gör
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </div>
     )
