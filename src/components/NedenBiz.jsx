@@ -3,8 +3,8 @@ import React from 'react'
 function NedenBiz() {
     return (
         <div className='my-20  w-full overflow-hidden max-md:mx-0'>
-            <div className='pl-20   text-4xl font-bold my-20'>Neden Biz?</div>
-            <div className='flex flex-col gap-0  mx-20 max-lg:mx-10 max-md:mx-0 '>
+            <div className='pl-20   text-4xl font-bold my-20 max-md:border-b-2 border-gray-200 max-md:pb-15 max-md:relative max-md:top-5'>Neden Biz?</div>
+            <div className='flex flex-col gap-0  mx-20 max-lg:mx-10 max-md:mx-0 max-md:relative max-md:right-5 '>
                 {/*Üst*/}
                 <div className='flex gap-0 relative top-[2px] max-md:flex-col '>
                     <div className='w-[50%]  box-border min-md:border-r-2 border-b-2  p-20 max-md:w-full   border-gray-200'>
