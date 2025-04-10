@@ -37,7 +37,7 @@ function Header() {
 
 
     return (
-        <div className='h-[70px] w-[99%] bg-transparent max-md:w-[95%]  absolute  z-20 font-Poppins '>
+        <div className='h-[70px] w-[99%] bg-transparent max-md:w-[95%]  absolute  z-50 font-Poppins '>
             <div className={`w-[105%]  absolute  duration-700 transition-all hidden max-md:block  bg-white ${bar ? " h-[80vh]" : "h-0"}
             
             ${display ? " h-[100vh]" : "h-0"}
