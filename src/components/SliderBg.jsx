@@ -38,7 +38,7 @@ const SliderBg = () => {
     return (
         <Swiper
             modules={[Autoplay]}
-            autoplay={{ delay: 7000 }}
+            autoplay={{ delay: 5000 }}
             spaceBetween={0}
             loop={true}
             className="h-full w-full"
