@@ -11,22 +11,55 @@ import Gelecek from "./Gelecek";
 
 const ProjectSlide = ({ selected }) => {
     const [slides, setSlides] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        setIsLoading(true);
+        let selectedSlides = [];
+
         switch (selected) {
             case "Biten":
-                setSlides(Biten);
+                selectedSlides = Biten;
                 break;
             case "Devam":
-                setSlides(Devam);
+                selectedSlides = Devam;
                 break;
             case "Gelecek":
-                setSlides(Gelecek);
+                selectedSlides = Gelecek;
                 break;
             default:
-                setSlides([]);
+                selectedSlides = [];
         }
+
+        // Fotoğrafları önceden yükle
+        const preloadImages = async () => {
+            const imagePromises = selectedSlides.map(slide => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = resolve;
+                    img.onerror = reject;
+                    img.src = slide.img;
+                });
+            });
+
+            try {
+                await Promise.all(imagePromises);
+                setSlides(selectedSlides);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        preloadImages();
     }, [selected]);
+
+    if (isLoading) {
+        return (
+            <div className="w-full h-[35rem] flex items-center justify-center">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-amber-400"></div>
+            </div>
+        );
+    }
 
     return (
         <div className="relative">
@@ -40,6 +73,7 @@ const ProjectSlide = ({ selected }) => {
                     clickable: true,
                     dynamicBullets: true,
                 }}
+                speed={800}
                 slidesPerView={4}
                 spaceBetween={20}
                 breakpoints={{
@@ -71,7 +105,6 @@ const ProjectSlide = ({ selected }) => {
                 ))}
             </Swiper>
 
-            {/* Custom Navigation Buttons */}
             <div className="swiper-button-prev !-left-16 !text-white !w-10 !h-10 hover:!text-amber-400 transition-all duration-300 max-lg:!-left-4"></div>
             <div className="swiper-button-next !-right-16 !text-white !w-10 !h-10 hover:!text-amber-400 transition-all duration-300 max-lg:!-right-4"></div>
         </div>

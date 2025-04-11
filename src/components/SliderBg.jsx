@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
@@ -8,25 +8,51 @@ import slide2 from "../assets/Slider1/slide2.png";
 import slide3 from "../assets/Slider1/slide3.jpeg";
 
 const SliderBg = () => {
+    const [imagesLoaded, setImagesLoaded] = useState(false);
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        // Resimleri önceden yükle
+        const imageUrls = [slide1, slide2, slide3];
+        const loadImages = imageUrls.map(url => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = url;
+                img.onload = () => resolve(url);
+                img.onerror = reject;
+            });
+        });
+
+        Promise.all(loadImages)
+            .then(loadedImages => {
+                setImages(loadedImages);
+                setImagesLoaded(true);
+            })
+            .catch(error => console.error('Resim yüklenirken hata:', error));
+    }, []);
+
+    if (!imagesLoaded) {
+        return <div className="h-full w-full bg-gray-200"></div>;
+    }
+
     return (
         <Swiper
-            modules={[Autoplay,]}
-            autoplay={{ delay: 5000 }}
-
+            modules={[Autoplay]}
+            autoplay={{ delay: 7000 }}
             spaceBetween={0}
             loop={true}
             className="h-full w-full"
         >
-
-            <SwiperSlide>
-                <img src={slide1} alt="Slide 1" className="h-full w-full object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide2} alt="Slide 2" className="h-full w-full object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={slide3} alt="Slide 3" className="h-full w-full object-cover" />
-            </SwiperSlide>
+            {images.map((image, index) => (
+                <SwiperSlide key={index}>
+                    <img
+                        src={image}
+                        alt={`Slide ${index + 1}`}
+                        className="h-full w-full object-cover"
+                        loading="eager"
+                    />
+                </SwiperSlide>
+            ))}
         </Swiper>
     );
 };

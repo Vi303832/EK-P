@@ -19,7 +19,7 @@ function Home() {
             <div className='h-screen w-full relative'>
                 <div className='h-full w-full relative'>
                     {/* Black overlay */}
-                    <div className='absolute h-full w-full bg-black top-0 z-10 opacity-45'></div>
+                    <div className='absolute h-full w-full bg-black top-0 z-10 opacity-35'></div>
 
                     {/* Slider background */}
                     <div className='absolute top-0 left-0 h-full w-full'>
@@ -30,11 +30,11 @@ function Home() {
                     <div className='absolute z-30 h-full w-full flex items-center'>
                         <div className='p-20 max-md:p-10 flex flex-col gap-6 relative'>
                             <div className='text-6xl max-md:text-5xl max-[380px]:!text-4xl text-white'>
-                                GLOBAL EXPERTİSE,<br />
-                                LOCAL COMMİTMENT
+                                GÜVEN VE KALİTE,<br />
+                                BAŞARININ TEMELİ
                             </div>
                             <div className='text-xl max-[380px]:!text-lg text-white'>
-                                Laying in groundwork for a sustainable future
+                                Geleceğe yön veren projelerle yanınızdayız
                             </div>
                             <button
                                 onClick={handleContactClick}

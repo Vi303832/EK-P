@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router";
 
 function PCard({ slide }) { // Destructure the slide prop
     let navigate = useNavigate()
     let { kategori, İsim, Açıklama, img, link } = slide
 
+    useEffect(() => {
+        // Fotoğrafı önceden yükle
+        const preloadImage = new Image();
+        preloadImage.src = img;
+    }, [img]);
+
     let handlenav = () => {
-
         navigate(link)
-
     };
-
 
     return (
         <div className='w-[20rem] h-[35rem]  max-[1100px]:w-[15rem] max-md:w-[12rem] max-sm:w-[15rem] max-[504px]:!w-full   flex flex-col gap-3 items-start relative'>
@@ -18,7 +21,9 @@ function PCard({ slide }) { // Destructure the slide prop
                 <div onClick={handlenav} className="overflow-hidden transition h-full w-full transform duration-300 ease-linear hover:scale-105"> {/* Yeni eklenen div */}
                     <img
                         src={img}
-
+                        loading="eager"
+                        decoding="async"
+                        alt={İsim}
                         className='w-full h-full object-cover transition-transform duration-300 hover:scale-110' /* Tailwind CSS ile hover efekti */
                     />
                 </div>

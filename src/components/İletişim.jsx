@@ -59,7 +59,7 @@ function İletişim() {
                         </div>
                     )}
 
-                    <form onSubmit={handleSubmit} className='grid md:grid-cols-2 gap-6'>
+                    <form onSubmit={handleSubmit} className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         <div className='flex flex-col'>
                             <label className='py-2 text-sm font-medium text-gray-700'>
                                 AD SOYAD
@@ -107,7 +107,7 @@ function İletişim() {
                                 placeholder='Şirket Adı'
                             />
                         </div>
-                        <div className='flex flex-col w-full py-10 col-span-2'>
+                        <div className='flex flex-col w-full py-10 col-span-1 md:col-span-2'>
                             <label className='py-2 text-sm font-medium text-gray-700'>
                                 MESAJINIZ
                             </label>
@@ -118,11 +118,11 @@ function İletişim() {
                                 placeholder='Mesajınızı buraya yazın...'
                             ></textarea>
                         </div>
-                        <div className='col-span-2'>
+                        <div className='col-span-1 md:col-span-2'>
                             <button
                                 type="submit"
                                 disabled={status === 'submitting'}
-                                className='bg-[#EE1B24] text-white px-8 py-3 rounded-3xl hover:bg-red-700 transition-colors font-medium flex items-center disabled:opacity-50'
+                                className='w-full md:w-auto bg-[#EE1B24] text-white px-8 py-3 rounded-3xl hover:bg-red-700 transition-colors font-medium flex items-center justify-center disabled:opacity-50'
                             >
                                 <FaPaperPlane className="mr-2" />
                                 {status === 'submitting' ? 'GÖNDERİLİYOR...' : 'GÖNDER'}
