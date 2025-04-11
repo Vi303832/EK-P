@@ -15,11 +15,11 @@ function NedenBiz() {
                 <div className='border-b border-gray-200 p-6 md:p-10 lg:p-20 md:border-r'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>01</span>
-                        <span className='text-xl md:text-2xl font-bold'>THE BEST PRİCE</span>
+                        <span className='text-xl md:text-2xl font-bold'>UZMAN KADRO</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            A project is an activiry to meet the creation of a unique product of service and thus activities that are under taken to accomodate outline.
+                            40 yıllık sektör deneyimimiz ve uzman mühendis kadromuzla, her projenizi en yüksek kalite standartlarında hayata geçiriyoruz. Tecrübeli ekibimiz, projenizin her aşamasında yanınızda.
                         </span>
                     </div>
                 </div>
@@ -27,11 +27,11 @@ function NedenBiz() {
                 <div className='border-b border-gray-200 p-6 md:p-10 lg:p-20'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>02</span>
-                        <span className='text-xl md:text-2xl font-bold'>Daily Consultant</span>
+                        <span className='text-xl md:text-2xl font-bold'>ŞEFFAF İLETİŞİM</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            A project is an activiry to meet the creation of a unique product of service and thus activities that are under taken to accomodate outline.
+                            Proje sürecinizin her aşamasında şeffaf iletişim kuruyoruz. Düzenli bilgilendirmeler ve raporlamalarla, projenizin ilerleyişini adım adım takip edebilirsiniz.
                         </span>
                     </div>
                 </div>
@@ -40,11 +40,11 @@ function NedenBiz() {
                 <div className='border-b md:border-b-0 border-gray-200 p-6 md:p-10 lg:p-20 md:border-r'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>03</span>
-                        <span className='text-xl md:text-2xl font-bold'>Custom Design</span>
+                        <span className='text-xl md:text-2xl font-bold'>YENİLİKÇİ ÇÖZÜMLER</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            A project is an activiry to meet the creation of a unique product of service and thus activities that are under taken to accomodate outline.
+                            Modern inşaat teknolojileri ve yenilikçi çözümlerle, sürdürülebilir ve enerji verimli projeler üretiyoruz. Çevre dostu yaklaşımımızla geleceği inşa ediyoruz.
                         </span>
                     </div>
                 </div>
@@ -52,11 +52,11 @@ function NedenBiz() {
                 <div className='p-6 md:p-10 lg:p-20'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>04</span>
-                        <span className='text-xl md:text-2xl font-bold'>Premium Quality</span>
+                        <span className='text-xl md:text-2xl font-bold'>ZAMANINDA TESLİMAT</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            A project is an activiry to meet the creation of a unique product of service and thus activities that are under taken to accomodate outline.
+                            Projelerinizi planlanan sürede ve bütçede tamamlıyoruz. Profesyonel proje yönetimi ve detaylı planlama ile, size söz verdiğimiz tarihte anahtarınızı teslim ediyoruz.
                         </span>
                     </div>
                 </div>

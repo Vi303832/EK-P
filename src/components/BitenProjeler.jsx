@@ -13,9 +13,11 @@ function BitenProjeler() {
 
     return (
         <div className="min-h-screen bg-gray-50 font-Poppins">
-            <div className='py-32 bg-gradient-to-r from-gray-600 to-gray-500 text-white flex items-center justify-center text-4xl font-semibold shadow-lg'>
-                <FaCheckCircle className="mr-4" />
-                <h1>Biten Projelerimiz</h1>
+            <div className='py-32 bg-gradient-to-r from-gray-600 to-gray-500 text-white flex items-center justify-center text-4xl font-semibold shadow-lg text-center'>
+                <div className="flex items-center whitespace-nowrap">
+                    <FaCheckCircle className="mr-4" />
+                    <h1 className="max-md:text-2xl">Biten Projelerimiz</h1>
+                </div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

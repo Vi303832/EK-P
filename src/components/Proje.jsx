@@ -2,9 +2,13 @@ import { useParams } from "react-router-dom";
 import Biten from "./Biten";
 import Devam from "./Devam";
 import Gelecek from "./Gelecek";
+import { useEffect } from "react";
 
 const Proje = () => {
     const { id } = useParams();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     // Biten, Devam ve Gelecek dizilerini birleştir
     const tumProjeler = [...Biten, ...Devam, ...Gelecek];
