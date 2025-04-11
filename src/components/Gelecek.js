@@ -1,12 +1,12 @@
-
+import Bitenpng from "./Biten.png"
 import slide1 from "../assets/Slider1/slide3.jpeg";
-
+import Gelecekpng from "./Gelecek.png"
 
 const Gelecek = [
     {
-        İsim: "Bütün Gelecek Eden Projeler",
+        İsim: "Bütün Gelecek Projeler",
 
-        img: "",
+        img: Gelecekpng,
         link: "/GelecekProjeler"
 
 

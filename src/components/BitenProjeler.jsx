@@ -20,10 +20,9 @@ function BitenProjeler() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-                    {Biten && Biten.map((props, index) => (
+                    {Biten && Biten.filter(props => props.İsim !== "Bütün Biten Projeler").map((props, index) => (
                         <div key={index} className="transform hover:scale-105 transition-transform duration-300">
                             <P2Card props={props} />
-
                         </div>
                     ))}
                 </div>

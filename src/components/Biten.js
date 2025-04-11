@@ -1,13 +1,14 @@
 
 import slide1 from "../assets/Slider1/slide1.png";
 import Yunuseli3 from "../BitenFoto/Yunuseli 3.jpg"
+import Bitenpng from "./Biten.png"
 
 const Biten = [
     {
 
         İsim: "Bütün Biten Projeler",
 
-        img: "",
+        img: Bitenpng,
         link: "/BitenProjeler"
 
 

@@ -1,11 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Map from "../assets/Map.png"
-import { FaEnvelope, FaPhone, FaComment, FaPaperPlane, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaComment, FaPaperPlane, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa'
 import { useEffect } from 'react';
+
 function İletişim() {
+    const [status, setStatus] = useState('');
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('https://formspree.io/f/mblgqnbl', {
+                method: 'POST',
+                body: new FormData(e.target),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                e.target.reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        }
+    };
+
     return (
         <div className='font-Poppins'>
             <div className='py-32 bg-gradient-to-r from-gray-600 to-gray-500 text-white justify-center flex text-4xl font-semibold'>
@@ -17,13 +43,31 @@ function İletişim() {
                     <div className='py-10 text-2xl font-semibold text-gray-800 flex items-center'>
                         <FaComment className="mr-3 text-[#EE1B24]" /> BİZE ULAŞIN
                     </div>
-                    <div className='grid md:grid-cols-2 gap-6'>
+
+                    {/* Form Success Message */}
+                    {status === 'success' && (
+                        <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg flex items-center">
+                            <FaCheckCircle className="mr-2" />
+                            Mesajınız başarıyla gönderildi!
+                        </div>
+                    )}
+
+                    {/* Form Error Message */}
+                    {status === 'error' && (
+                        <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg">
+                            Bir hata oluştu. Lütfen tekrar deneyin.
+                        </div>
+                    )}
+
+                    <form onSubmit={handleSubmit} className='grid md:grid-cols-2 gap-6'>
                         <div className='flex flex-col'>
                             <label className='py-2 text-sm font-medium text-gray-700'>
                                 AD SOYAD
                             </label>
                             <input
                                 type='text'
+                                name="name"
+                                required
                                 className='w-full border-2 px-6 py-3 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#EE1B24] focus:border-transparent transition-all bg-gray-50'
                                 placeholder='Adınız Soyadınız'
                             />
@@ -34,6 +78,8 @@ function İletişim() {
                             </label>
                             <input
                                 type='email'
+                                name="email"
+                                required
                                 className='w-full border-2 px-6 py-3 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#EE1B24] focus:border-transparent transition-all bg-gray-50'
                                 placeholder='ornek@email.com'
                             />
@@ -44,6 +90,8 @@ function İletişim() {
                             </label>
                             <input
                                 type='tel'
+                                name="phone"
+                                required
                                 className='w-full border-2 px-6 py-3 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#EE1B24] focus:border-transparent transition-all bg-gray-50'
                                 placeholder='5XX XXX XX XX'
                             />
@@ -54,25 +102,33 @@ function İletişim() {
                             </label>
                             <input
                                 type='text'
+                                name="company"
                                 className='w-full border-2 px-6 py-3 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#EE1B24] focus:border-transparent transition-all bg-gray-50'
                                 placeholder='Şirket Adı'
                             />
                         </div>
-                    </div>
-                    <div className='flex flex-col w-full py-10'>
-                        <label className='py-2 text-sm font-medium text-gray-700'>
-                            MESAJINIZ
-                        </label>
-                        <textarea
-                            className='w-full border-2 px-6 h-36 py-4 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#EE1B24] focus:border-transparent transition-all resize-none bg-gray-50'
-                            placeholder='Mesajınızı buraya yazın...'
-                        ></textarea>
-                    </div>
-                    <div>
-                        <button className='bg-[#EE1B24] text-white px-8 py-3 rounded-3xl hover:bg-red-700 transition-colors font-medium flex items-center'>
-                            <FaPaperPlane className="mr-2" /> GÖNDER
-                        </button>
-                    </div>
+                        <div className='flex flex-col w-full py-10 col-span-2'>
+                            <label className='py-2 text-sm font-medium text-gray-700'>
+                                MESAJINIZ
+                            </label>
+                            <textarea
+                                name="message"
+                                required
+                                className='w-full border-2 px-6 h-36 py-4 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#EE1B24] focus:border-transparent transition-all resize-none bg-gray-50'
+                                placeholder='Mesajınızı buraya yazın...'
+                            ></textarea>
+                        </div>
+                        <div className='col-span-2'>
+                            <button
+                                type="submit"
+                                disabled={status === 'submitting'}
+                                className='bg-[#EE1B24] text-white px-8 py-3 rounded-3xl hover:bg-red-700 transition-colors font-medium flex items-center disabled:opacity-50'
+                            >
+                                <FaPaperPlane className="mr-2" />
+                                {status === 'submitting' ? 'GÖNDERİLİYOR...' : 'GÖNDER'}
+                            </button>
+                        </div>
+                    </form>
                 </div>
 
                 {/*RightSide*/}
