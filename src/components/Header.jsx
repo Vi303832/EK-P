@@ -106,7 +106,8 @@ function Header() {
                         </div>
 
                     </div>
-                    <div className={`w-full items-end h-full ${window.location.pathname === '/' ? 'text-white' : 'text-black'} opacity-90 gap-10 flex-col max-md:hidden hidden max-xl:flex`}>
+                    {/*Maxlg*/}
+                    <div className={`w-full items-end h-full ${window.location.pathname === '/' ? 'text-white' : '!hidden'} opacity-90 gap-10 flex-col max-md:hidden hidden max-xl:flex`}>
                         <div onClick={() => handlenavigate("/")} className='cursor-pointer'>
                             Anasayfa
                         </div>
@@ -143,7 +144,7 @@ function Header() {
                         </div>
                     </div>
 
-                    <div className='flex w-full justify-end items-center h-full text-white opacity-90 gap-10 max-xl:hidden relative top-1'>
+                    <div className={`flex w-full justify-end items-center h-full text-white opacity-90 gap-10 max-xl:hidden relative top-1 ${window.location.pathname === '/' ? 'max-xl:hidden' : 'min-md:flex'}`}>
 
                         <div onClick={() => handlenavigate("/")} className='cursor-pointer hover:relative hover:top-1   w-16 hover:h-10 h-5'>
                             Anasayfa
@@ -157,14 +158,14 @@ function Header() {
                         >
                             <a
                                 onClick={() => handlenavigate("/")}
-                                href='#proje' className='max-xl:hidden '>Projeler</a>
-                            <div onClick={() => handlenavigate("/BitenProjeler")} className={`max-xl:hidden transition-all duration-300 relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg mt-8 text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30 mt-8"}`}>
+                                href='#proje' className={` ${window.location.pathname === '/' ? '' : 'min-md:block'}`}>Projeler</a>
+                            <div onClick={() => handlenavigate("/BitenProjeler")} className={` ${window.location.pathname === '/' ? '' : 'min-md:block'} transition-all duration-300  relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg mt-8 text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30 mt-8"}`}>
                                 Biten Projeler
                             </div>
-                            <div onClick={() => handlenavigate("/DevamEdenProjeler")} className={`max-xl:hidden transition-all duration-300 relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30"}`}>
+                            <div onClick={() => handlenavigate("/DevamEdenProjeler")} className={` ${window.location.pathname === '/' ? '' : '  min-md:block'} transition-all duration-300 relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30"}`}>
                                 Devam Eden Projeler
                             </div>
-                            <div onClick={() => handlenavigate("/GelecekProjeler")} className={`max-xl:hidden transition-all duration-300 relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30"}`}>
+                            <div onClick={() => handlenavigate("/GelecekProjeler")} className={` ${window.location.pathname === '/' ? '' : 'min-md:block'} transition-all duration-300 relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30"}`}>
                                 Gelecek Projeler
                             </div>
                         </div>

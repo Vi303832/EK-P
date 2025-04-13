@@ -122,7 +122,7 @@ function İletişim() {
                             <button
                                 type="submit"
                                 disabled={status === 'submitting'}
-                                className='w-full md:w-auto bg-[#EE1B24] text-white px-8 py-3 rounded-3xl hover:bg-red-700 transition-colors font-medium flex items-center justify-center disabled:opacity-50'
+                                className='w-full md:w-auto bg-[#EE1B24] text-white px-8 py-3 rounded-3xl hover:bg-red-700 transition-colors font-medium flex items-center justify-center disabled:opacity-50 cursor-pointer'
                             >
                                 <FaPaperPlane className="mr-2" />
                                 {status === 'submitting' ? 'GÖNDERİLİYOR...' : 'GÖNDER'}
