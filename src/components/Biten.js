@@ -8,7 +8,7 @@ const Biten = [
         kategori: "Tümü",
         aciklama: "Tüm Biten Projeler",
         bilgi: "Tüm biten projelerimizi burada görebilirsiniz.",
-        img: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692272/IMG-20250506-WA0035_i895yn.jpg",
+        img: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746736675/ChatGPT_Image_May_8_2025_11_26_35_PM_4_u2r33r.png",
         tarih: 2024,
         konum: "Tümü",
         link: "/BitenProjeler",

@@ -57,7 +57,7 @@ function ContactDisplay() {
                         </button>
                     </div>
 
-                    <div className="md:w-1/2 flex justify-center max-md:">
+                    <div className="md:w-1/2 flex justify-center max-md:hidden">
                         <div className="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
                             <h3 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
                                 Hızlı İletişim

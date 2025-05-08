@@ -51,7 +51,7 @@ function DefaultHeader() {
             <nav className="container mx-auto flex items-center justify-between px-4 md:px-8 py-4 h-[90px]">
                 {/* Logo */}
                 <div className="flex flex-col items-center cursor-pointer" onClick={() => handleNavigate('/')}>
-                    <div className='h-[120%]  flex justify-center mx-10 max-md:mx-5'>
+                    <div className='h-[120%]  flex justify-center mx-10 max-md:mx-5 max-sm:mx-0 '>
                         <img src={Logo} onClick={() => handleNavigate("/")} className='h-full object-cover cursor-pointer w-[100px]' />
                     </div>
                 </div>
@@ -67,7 +67,7 @@ function DefaultHeader() {
 
                     {/* Projeler Dropdown */}
                     <div className="relative group">
-                        <button className={`flex items-center px-3 py-2 rounded-lg hover:bg-red-50 hover:text-red-600 font-medium transition-all duration-200 ${pathname.includes('/Projeler') ? 'text-red-600 bg-red-50' : ''
+                        <button className={`flex items-center px-3 py-2 rounded-lg hover:bg-red-50 hover:text-red-600 font-medium transition-all duration-200 cursor-pointer ${pathname.includes('/Projeler') ? 'text-red-600 bg-red-50' : ''
                             }`}>
                             <span>Projeler</span>
                             <svg className="ml-1 w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@ function DefaultHeader() {
                 {/* Mobil Menü Butonu */}
                 <button
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors"
+                    className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors cursor-pointer"
                     aria-expanded={mobileMenuOpen}
                 >
                     <span className="sr-only">Menüyü Aç/Kapat</span>
@@ -131,7 +131,7 @@ function DefaultHeader() {
                 {/* Mobil Menü Kapatma Butonu */}
                 <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="absolute top-5 right-5 p-2 rounded-full bg-red-50 text-red-600 hover:bg-red-100"
+                    className="absolute top-5 right-5 p-2 rounded-full bg-red-50 text-red-600 hover:bg-red-100 cursor-pointer"
                 >
                     <IoMdClose size={24} />
                 </button>
@@ -149,7 +149,7 @@ function DefaultHeader() {
                         <div className="border-b border-gray-200">
                             <button
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                                className="flex justify-between items-center w-full py-3 px-4 text-left text-lg font-medium rounded-lg hover:bg-red-50 transition-colors"
+                                className="flex justify-between items-center w-full py-3 px-4 text-left text-lg font-medium rounded-lg hover:bg-red-50 transition-colors cursor-pointer"
                             >
                                 <span>Projeler</span>
                                 <svg
@@ -228,7 +228,7 @@ const NavItem = ({ path, label, currentPath, onClick }) => {
     return (
         <button
             onClick={onClick}
-            className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 ${isActive
+            className={`px-3 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer ${isActive
                 ? 'text-red-600 bg-red-50'
                 : 'hover:bg-red-50 hover:text-red-600'
                 }`}
@@ -245,7 +245,7 @@ const DropdownItem = ({ label, onClick, currentPath, path }) => {
     return (
         <button
             onClick={onClick}
-            className={`block w-full text-left px-4 py-2 text-sm ${isActive
+            className={`block w-full text-left px-4 py-2 text-sm cursor-pointer ${isActive
                 ? 'bg-red-50 text-red-600'
                 : 'text-gray-700 hover:bg-red-50 hover:text-red-600'
                 }`}
@@ -262,7 +262,7 @@ const MobileNavItem = ({ label, onClick, currentPath, path }) => {
     return (
         <button
             onClick={onClick}
-            className={`w-full flex items-center py-3 px-4 rounded-lg text-lg font-medium transition-colors ${isActive
+            className={`w-full flex items-center py-3 px-4 rounded-lg text-lg font-medium transition-colors cursor-pointer ${isActive
                 ? 'bg-red-100 text-red-600'
                 : 'hover:bg-red-50'
                 }`}
@@ -279,7 +279,7 @@ const MobileDropdownItem = ({ label, onClick, currentPath, path, delay, isOpen }
     return (
         <button
             onClick={onClick}
-            className={`block w-full text-left py-2 px-4 rounded-md transform transition-all duration-300 ${delay} 
+            className={`block w-full text-left py-2 px-4 rounded-md transform transition-all duration-300 cursor-pointer ${delay} 
                 ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'}
                 ${isActive ? 'bg-red-100 text-red-600' : 'hover:bg-red-50 text-gray-700'}`}
         >

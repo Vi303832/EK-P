@@ -15,11 +15,11 @@ function NedenBiz() {
                 <div className='border-b border-gray-200 p-6 md:p-10 lg:p-20 md:border-r'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>01</span>
-                        <span className='text-xl md:text-2xl font-bold'>UZMAN KADRO</span>
+                        <span className='text-xl md:text-2xl font-bold'>SAĞLAM TEMELLER</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            40 yıllık sektör deneyimimiz ve uzman mühendis kadromuzla, her projenizi en yüksek kalite standartlarında hayata geçiriyoruz. Tecrübeli ekibimiz, projenizin her aşamasında yanınızda.
+                            Onlarca projede edindiğimiz saha deneyimiyle, yapıları sadece inşa etmiyor; uzun ömürlü, güvenli yaşam alanları oluşturuyoruz.
                         </span>
                     </div>
                 </div>
@@ -27,11 +27,11 @@ function NedenBiz() {
                 <div className='border-b border-gray-200 p-6 md:p-10 lg:p-20'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>02</span>
-                        <span className='text-xl md:text-2xl font-bold'>ŞEFFAF İLETİŞİM</span>
+                        <span className='text-xl md:text-2xl font-bold'>PROFESYONEL EKİP</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            Proje sürecinizin her aşamasında şeffaf iletişim kuruyoruz. Düzenli bilgilendirmeler ve raporlamalarla, projenizin ilerleyişini adım adım takip edebilirsiniz.
+                            İnce işçilikten proje koordinasyonuna kadar her alanda uzmanlaşmış ekibimizle sürecin her adımında çözüm ortağınızız.
                         </span>
                     </div>
                 </div>
@@ -40,11 +40,11 @@ function NedenBiz() {
                 <div className='border-b md:border-b-0 border-gray-200 p-6 md:p-10 lg:p-20 md:border-r'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>03</span>
-                        <span className='text-xl md:text-2xl font-bold'>YENİLİKÇİ ÇÖZÜMLER</span>
+                        <span className='text-xl md:text-2xl font-bold'>GÜVENİLİR TESLİMAT</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            Modern inşaat teknolojileri ve yenilikçi çözümlerle, sürdürülebilir ve enerji verimli projeler üretiyoruz. Çevre dostu yaklaşımımızla geleceği inşa ediyoruz.
+                            Zamanında teslim, bizim için bir taahhüt değil, temel ilkedir. Her projeyi belirlenen sürede ve öngörülen bütçede tamamlarız.
                         </span>
                     </div>
                 </div>
@@ -52,11 +52,11 @@ function NedenBiz() {
                 <div className='p-6 md:p-10 lg:p-20'>
                     <div className='flex gap-4 items-center'>
                         <span className='text-xl md:text-2xl text-gray-400'>04</span>
-                        <span className='text-xl md:text-2xl font-bold'>ZAMANINDA TESLİMAT</span>
+                        <span className='text-xl md:text-2xl font-bold'>YÜKSEK STANDARTLAR</span>
                     </div>
                     <div className='mt-6 md:mt-10'>
                         <span className='text-base md:text-lg opacity-80'>
-                            Projelerinizi planlanan sürede ve bütçede tamamlıyoruz. Profesyonel proje yönetimi ve detaylı planlama ile, size söz verdiğimiz tarihte anahtarınızı teslim ediyoruz.
+                            Kullandığımız malzemeden uygulama detaylarına kadar her aşamada kaliteyi önceliklendirir, kalıcı yapılar üretiriz.
                         </span>
                     </div>
                 </div>

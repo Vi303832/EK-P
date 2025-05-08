@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Map from "../assets/Map.png"
 import { FaEnvelope, FaPhone, FaComment, FaPaperPlane, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa'
 import { useEffect } from 'react';
 
@@ -34,7 +33,7 @@ function İletişim() {
 
     return (
         <div className='font-Poppins'>
-            <div className='py-32 bg-gradient-to-r from-gray-600 to-gray-500 text-white justify-center flex text-4xl font-semibold'>
+            <div className='py-32 bg-[#EE1B24] text-white justify-center flex text-4xl font-semibold'>
                 <FaEnvelope className="mr-4 text-4xl" /> İletişim
             </div>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row'>
@@ -141,7 +140,7 @@ function İletişim() {
                             <div className='flex gap-2 py-1 items-center'>
                                 <FaPhone className="text-[#EE1B24]" />
                                 <span className='font-medium'>TELEFON:</span>
-                                <span className='text-gray-600'>5xxxxxxxxx</span>
+                                <span className='text-gray-600'>02244530008</span>
                             </div>
                             <div className='flex gap-2 py-1 items-center'>
                                 <FaEnvelope className="text-[#EE1B24]" />
@@ -151,12 +150,21 @@ function İletişim() {
                             <div className='flex gap-2 py-1 items-start'>
                                 <FaMapMarkerAlt className="text-[#EE1B24] mt-1" />
                                 <span className='font-medium'>ADRES:</span>
-                                <span className='text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, dignissimos voluptatibus.</span>
+                                <span className='text-gray-600'>Geçit Mh. Gökalp Sok. No: 1/1 Ekip İş Merkezi, Bursa</span>
                             </div>
                         </div>
                     </div>
                     <div className='p-10 my-5'>
-                        <img src={Map} alt="Location Map" className='w-full rounded-lg shadow-lg hover:shadow-xl transition-shadow' />
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.4669528809413!2d28.955637699999997!3d40.2653763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca1429d2d0a19b%3A0xea1fc7cd3ec9f789!2sEkip%20Boya!5e0!3m2!1sen!2str!4v1746733940487!5m2!1sen!2str"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                        />
                     </div>
                 </div>
             </div>

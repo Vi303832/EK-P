@@ -4,7 +4,7 @@ import { FaChevronUp } from "react-icons/fa";
 import men from "../assets/men.jpg"
 import { useNavigate } from 'react-router-dom';
 
-function NedenBiz() {
+function Faaliyet() {
 
     let navigate = useNavigate()
 
@@ -58,31 +58,29 @@ function NedenBiz() {
     };
 
     return (
-        <div className='my-20 justify-center flex gap-20 max-md:flex-col max-md:mx-0 w-full overflow-hidden'>
+        <div className='my-10 md:my-20 px-4 md:px-8 lg:px-0 flex flex-col md:flex-row md:justify-center md:gap-10 lg:gap-20 w-full overflow-hidden'>
             {/*Sol*/}
-            <div className='w-[50%] flex flex-col gap-10 max-md:w-full max-md:mx-5'>
+            <div className='w-full md:w-[50%] flex flex-col gap-6 md:gap-10'>
                 <div>
-                    <div className='opacity-40 font-bold py-2'>
+                    <div className='opacity-40 font-bold py-2 text-sm md:text-base'>
                         Uzmanlık Alanlarımız
                     </div>
-                    <div className='text-6xl max-md:text-5xl'>
+                    <div className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold break-words'>
                         Faaliyet Alanlarımız
                     </div>
                 </div>
 
-                <div className='w-full text-lg opacity-60 max-md:w-[80%] max-md:text-[16px]'>
-                    40 yılı aşkın deneyimimizle, modern mimari ve yenilikçi inşaat teknolojilerini kullanarak,
-                    yaşam alanlarınızı ve ticari projelerinizi en yüksek kalite standartlarında hayata geçiriyoruz.
-                    Sürdürülebilir yapılar ve çevre dostu çözümlerle, geleceğin yaşam alanlarını bugünden inşa ediyoruz.
+                <div className='w-full md:w-[95%] lg:w-full text-base md:text-lg opacity-60'>
+                    Ekip Grup İnşaat, 2012 yılından bu yana Türkiye genelinde, özellikle Bursa'da hayata geçirdiği nitelikli konut projeleriyle güvenilir bir marka haline gelmiştir. Kaliteli yaşam alanları üretme vizyonuyla yola çıkan firmamız; zamanında teslimat, müşteri memnuniyeti ve ekonomik çözümler sunma prensiplerini benimsemiştir.
                 </div>
 
-                <div onClick={() => navigate("/Hakkımızda")} className='bg-lacivert px-10 py-2 w-fit text-lg rounded cursor-pointer text-white'>
+                <div onClick={() => navigate("/Hakkımızda")} className='bg-lacivert px-6 md:px-10 py-2 w-fit text-base md:text-lg rounded cursor-pointer text-white hover:bg-opacity-90 transition-all'>
                     Detaylı Bilgi
                 </div>
 
-                <div className=''>
+                <div className='mt-2 md:mt-4'>
                     <img
-                        className='relative h-[300px] object-cover w-[100%] max-md:w-[90%]'
+                        className='h-[200px] sm:h-[250px] md:h-[300px] object-cover w-full rounded-md shadow-md'
                         src="https://img.freepik.com/free-photo/handyman-construction-site-process-drilling-wall-with-perforator_169016-12109.jpg?t=st=1741698747~exp=1741702347~hmac=c020a5d735a833eb96322cd08755180baac73a65d1e920b9140ebe7bdc1cb4ce&w=1800"
                         alt="İnşaat Çalışması"
                     />
@@ -108,10 +106,10 @@ function NedenBiz() {
                                     </div>
                                 </div>
                             </div>
-                            <div className={`overflow-hidden transition-all duration-500 delay-300 ease-in-out ${openIndex === index ? 'max-h-40' : 'max-h-0'}`}>
+                            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-60' : 'max-h-0'}`}>
                                 <div className="p-2 bg-gray-100">
                                     {section.options.map((option, i) => (
-                                        <div key={i} className="p-2 hover:bg-gray-200 cursor-pointer transition-colors duration-300">
+                                        <div key={i} className="p-2 md:p-3 hover:bg-gray-200 cursor-pointer transition-colors duration-300 text-sm md:text-base">
                                             {option}
                                         </div>
                                     ))}
@@ -126,4 +124,4 @@ function NedenBiz() {
     )
 }
 
-export default NedenBiz
+export default Faaliyet
