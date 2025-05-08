@@ -65,13 +65,13 @@ const ProjectSlide = ({ selected }) => {
     }
     if (slides.length === 1) {
         return (
-            <div className="w-full h-[20rem] flex flex-col items-center justify-center gap-6 bg-gray-800/50 rounded-lg shadow-lg p-8">
+            <div className="w-full h-[30rem] flex flex-col items-center justify-center gap-6 bg-gray-800/50 rounded-lg shadow-lg p-8">
                 <div className="text-3xl text-white font-semibold text-center">
                     Şu an proje bulunmamaktadır
                 </div>
                 <button
                     onClick={() => navigate("/BitenProjeler")}
-                    className='bg-amber-400 hover:bg-amber-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg'
+                    className='bg-amber-400 hover:bg-amber-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg cursor-pointer'
                 >
                     <span>Biten Projeleri Görüntüle</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
