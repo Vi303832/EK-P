@@ -28,11 +28,12 @@ function Faaliyet() {
             ]
         },
         {
-            title: "Endüstriyel Tesisler",
+            title: "Taahhüt İşler",
             options: [
-                "Fabrika Binaları",
-                "Depo ve Lojistik Merkezleri",
-                "Üretim Tesisleri"
+                "Anahtar Teslim Projeler",
+                "Kaba İnşaat İşleri",
+                "İnce İnşaat ve Tadilat",
+                "Altyapı ve Çevre Düzenleme"
             ]
         },
         {

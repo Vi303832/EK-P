@@ -3,7 +3,7 @@ import Biten from "./Biten";
 import Devam from "./Devam";
 import Gelecek from "./Gelecek";
 import { useEffect, useState, useRef } from "react";
-import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight, FaCalendarAlt } from 'react-icons/fa';
 
 const Proje = () => {
     const { id } = useParams();
@@ -48,22 +48,22 @@ const Proje = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col items-start">
                         <div className="mb-3">
-                            <a href="/" className="text-sm text-gray-400 hover:text-[#EE1B24] transition-colors">
-                                Gayrimenkul
+                            <a href="/" className="inline-block px-3 py-1  bg-opacity-20 text-white/80 rounded-md text-sm font-medium hover:bg-opacity-30 transition-all">
+                                {p.kategori || "Proje"}
                             </a>
                         </div>
                         <h1 className="text-4xl md:text-6xl font-bold mb-6">{p.isim}</h1>
                         <div className="flex flex-wrap gap-4 text-sm md:text-base">
                             {p.konum && (
-                                <div className="flex items-center">
-                                    <FaMapMarkerAlt className="mr-1 text-[#EE1B24]" />
+                                <div className="flex items-center bg-gray-800 bg-opacity-50 px-3 py-1 rounded-full">
+                                    <FaMapMarkerAlt className="mr-2 text-[#EE1B24]" />
                                     <span>{p.konum}</span>
                                 </div>
                             )}
-                            {p.kategori && (
-                                <div className="flex items-center">
-                                    <div className="w-2 h-2 bg-[#EE1B24] rounded-full mx-2"></div>
-                                    <span>{p.kategori}</span>
+                            {p.tarih && (
+                                <div className="flex items-center bg-gray-800 bg-opacity-50 px-3 py-1 rounded-full">
+                                    <FaCalendarAlt className="mr-2 text-[#EE1B24]" />
+                                    <span>{p.tarih}</span>
                                 </div>
                             )}
                         </div>
@@ -82,15 +82,11 @@ const Proje = () => {
                                     alt={p.isim}
                                     className="w-full h-[500px] md:h-[550px] object-cover"
                                 />
-                                {p.kategori === "Biten Projeler" && (
-                                    <div className="absolute top-4 left-0 bg-[#EE1B24] text-white px-4 py-1 text-sm font-medium">
-                                        Ekip İnşaat
-                                    </div>
-                                )}
+
                             </div>
 
                             {/* Küçük resimler - Slider - Minimalist tasarım */}
-                            {p.images && (
+                            {p.images && p.images.length > 1 && (
                                 <div className="relative py-4 px-8 mt-2">
                                     <button
                                         onClick={scrollLeft}
@@ -134,7 +130,10 @@ const Proje = () => {
                     {/* Sağ taraf - Proje Detayları */}
                     <div className="w-full lg:w-2/5">
                         <div className="bg-white rounded-lg shadow-md p-6">
-                            <h2 className="text-xl font-bold mb-4 text-gray-800">Proje Bilgisi</h2>
+                            <h2 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                                <span className="w-2 h-6 bg-[#EE1B24] mr-2 rounded"></span>
+                                Proje Bilgisi
+                            </h2>
                             <div className="prose max-w-none">
                                 <p className="text-gray-700 mb-6">
                                     {p.bilgi || p.isim}

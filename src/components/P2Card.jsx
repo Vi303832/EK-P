@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router";
 
 function P2Card({ props }) {
-    let { kategori, isim, aciklama, img, link } = props
+    let { isim, aciklama, img, link } = props
     let navigate = useNavigate()
 
     let handlenav = () => {
@@ -20,18 +20,16 @@ function P2Card({ props }) {
                         loading="lazy"
                     />
                 </div>
-
+                <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
             </div>
 
             <div className='p-6 flex-1 flex flex-col justify-between'>
                 <div className='space-y-3'>
-                    <div className='text-sm font-medium text-[#EE1B24] tracking-wider uppercase'>
-                        {kategori}
-                    </div>
-
                     <h3 className='text-xl font-semibold text-gray-800 hover:text-[#EE1B24] transition-colors duration-300 line-clamp-2'>
                         {isim}
                     </h3>
+
+                    <div className='w-12 h-1 bg-[#EE1B24]'></div>
 
                     <p className='text-gray-600 text-sm leading-relaxed line-clamp-3'>
                         {aciklama}

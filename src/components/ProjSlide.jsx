@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -65,18 +66,17 @@ const ProjectSlide = ({ selected }) => {
     }
     if (slides.length === 1) {
         return (
-            <div className="w-full h-[30rem] flex flex-col items-center justify-center gap-6 bg-gray-800/50 rounded-lg shadow-lg p-8">
-                <div className="text-3xl text-white font-semibold text-center">
+            <div className="w-full h-[35rem] flex flex-col items-center justify-center gap-6 bg-[#0E1117] rounded-lg shadow-md p-8">
+                <div className="text-2xl text-white font-semibold text-center">
                     Şu an proje bulunmamaktadır
                 </div>
+                <div className="w-12 h-1 bg-[#EE1B24]"></div>
                 <button
                     onClick={() => navigate("/BitenProjeler")}
-                    className='bg-amber-400 hover:bg-amber-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg cursor-pointer'
+                    className='bg-[#EE1B24] hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg cursor-pointer'
                 >
                     <span>Biten Projeleri Görüntüle</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
+                    <FaArrowRight className="h-5 w-5" />
                 </button>
             </div>
         );
