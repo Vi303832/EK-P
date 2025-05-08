@@ -1,12 +1,52 @@
-# React + Vite
+# Ekip İnşaat - Kurumsal Web Sitesi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 [Canlı Demo](https://ekip-beta.vercel.app/)
 
-Currently, two official plugins are available:
+## Proje Açıklaması
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Bu proje, **Ekip İnşaat** firmasının hizmetlerini, projelerini ve kurumsal kimliğini modern bir kullanıcı deneyimiyle tanıtmak amacıyla geliştirilmiştir. 
+Mobil uyumlu tasarımı ve hızlı erişilebilir sayfa yapısı ile kullanıcı odaklı bir çözüm sunmaktadır.
 
-## Expanding the ESLint configuration
+> Kurumsal web sitesi - Ekip İnşaat için geliştirilmiştir.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Kullanılan Teknolojiler
+
+- **React.js**  
+- **Tailwind CSS**  
+- **Formspree** (İletişim formu için)  
+- **Vercel** (Deploy hizmeti)
+
+## Özellikler
+
+- %100 Responsive tasarım
+- Ana sayfa, hizmetler, projeler, hakkımızda ve iletişim bölümleri
+- Formspree ile çalışan iletişim formu entegrasyonu
+- Modern ve temiz kullanıcı arayüzü
+- Hızlı yüklenen, optimize edilmiş sayfalar
+- SEO uyumlu yapı (Title, Description, Open Graph meta tag'leri düzenlendi)
+
+## Kurulum ve Çalıştırma
+
+Projeyi lokal ortamda çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
+
+```bash
+git clone https://github.com/kullaniciAdi/proje-adi.git
+cd proje-adi
+npm install
+npm run dev
+```
+
+
+Bu proje JavaScript ile geliştirilmiştir. Node.js 18+ versiyonu önerilmektedir.
+
+## Ekran Görüntüleri
+
+
+![screencapture-ekip-beta-vercel-app-2025-04-28-14_08_58](https://github.com/user-attachments/assets/2f376875-29ea-4857-93fe-18cb91fa1041)
+
+
+
+
+
+## Lisans
+Bu proje yalnızca portföy ve tanıtım amaçlı geliştirilmiştir. Ticari kullanım için izin alınması gerekmektedir.
