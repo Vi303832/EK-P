@@ -9,6 +9,7 @@ import GelecekProjeler from './components/GelecekProjeler'
 import DevamProjeler from './components/DevamEdenProjeler'
 import İletişim from "./components/İletişim"
 import Hakkımızda from "./components/Hakkımızda"
+import DefaultHeader from './components/DefaultHeader'
 
 function App() {
 
@@ -19,102 +20,53 @@ function App() {
         <Routes>
           <Route path='/' element={
             <>
-
               <Header />
-
-
-
-
               <Home />
               <Footer />
             </>
-
           } />
           <Route path='/BitenProjeler' element={
-
             <>
-
-              <Header />
-
-
-
-
+              <DefaultHeader />
               <BitenProjeler />
               <Footer />
             </>
-
           } />
           <Route path='/DevamEdenProjeler' element={
-
             <>
-
-              <Header />
-
-
-
-
+              <DefaultHeader />
               <DevamProjeler />
               <Footer />
             </>
-
           } />
           <Route path='/GelecekProjeler' element={
-
             <>
-
-              <Header />
-
-
-
-
+              <DefaultHeader />
               <GelecekProjeler />
               <Footer />
             </>
-
           } />
           <Route path='/:id' element={
-
-
-
             <>
-
-              <Header />
-
+              <DefaultHeader />
               <Proje />
               <Footer />
             </>
-
           } />
-
           <Route path='/iletişim' element={
             <>
-
-              <Header />
-
-
-
-
+              <DefaultHeader />
               <İletişim />
               <Footer />
             </>
-
           } />
           <Route path='/Hakkımızda' element={
-
             <>
-
-              <Header />
-
-
-
-
+              <DefaultHeader />
               <Hakkımızda />
               <Footer />
             </>
-
           } />
-
-
         </Routes>
 
       </div>
