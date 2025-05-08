@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 
 function PCard({ slide }) { // Destructure the slide prop
     let navigate = useNavigate()
-    let { kategori, İsim, Açıklama, img, link } = slide
+    let { kategori, isim, aciklama, img, link } = slide
 
     useEffect(() => {
         // Fotoğrafı önceden yükle
@@ -23,7 +23,7 @@ function PCard({ slide }) { // Destructure the slide prop
                         src={img}
                         loading="eager"
                         decoding="async"
-                        alt={İsim}
+                        alt={isim}
                         className='w-full h-full object-cover transition-transform duration-300 hover:scale-110' /* Tailwind CSS ile hover efekti */
                     />
                 </div>
@@ -33,10 +33,10 @@ function PCard({ slide }) { // Destructure the slide prop
             </div>
 
             <div className='text-xl'>
-                {İsim}
+                {isim}
             </div>
             <div className='opacity-80'>
-                {Açıklama}
+                {aciklama}
             </div>
         </div>
     );

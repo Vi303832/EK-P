@@ -2,10 +2,13 @@ import { useParams } from "react-router-dom";
 import Biten from "./Biten";
 import Devam from "./Devam";
 import Gelecek from "./Gelecek";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { FaMapMarkerAlt, FaCalendarAlt, FaBuilding } from 'react-icons/fa';
 
 const Proje = () => {
     const { id } = useParams();
+    const [selectedImage, setSelectedImage] = useState(0);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -28,20 +31,61 @@ const Proje = () => {
 
             <div className="container mx-auto px-4 py-8 md:py-12">
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+                    {/* Sol taraf - Resim Galerisi */}
                     <div className="w-full lg:w-2/3">
-                        <img
-                            src={p.img}
-                            alt="projefotosu"
-                            className="w-full h-auto rounded-lg shadow-lg object-cover"
-                        />
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img
+                                src={p.images ? p.images[selectedImage] : p.img}
+                                alt={p.İsim}
+                                className="w-full h-[400px] object-cover"
+                            />
+
+                            {/* Küçük resimler */}
+                            {p.images && (
+                                <div className="grid grid-cols-4 gap-2 p-4">
+                                    {p.images.map((image, index) => (
+                                        <img
+                                            key={index}
+                                            src={image}
+                                            alt={`${p.İsim} - ${index + 1}`}
+                                            className={`w-full h-20 object-cover cursor-pointer rounded-lg transition-all ${selectedImage === index ? 'ring-2 ring-blue-500' : 'hover:opacity-80'
+                                                }`}
+                                            onClick={() => setSelectedImage(index)}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+                        </div>
                     </div>
 
-                    <div className="w-full lg:w-1/3 bg-white rounded-lg shadow-lg p-6 md:p-8">
-                        <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
-                            {p.İsim}
-                        </h1>
-                        <div className="text-gray-600 leading-relaxed">
-                            {p.Bilgi}
+                    {/* Sağ taraf - Proje Detayları */}
+                    <div className="w-full lg:w-1/3">
+                        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                            <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
+                                {p.isim}
+                            </h1>
+
+                            <div className="space-y-4 mb-6">
+                                <div className="flex items-center text-gray-600">
+                                    <FaBuilding className="mr-2" />
+                                    <span>{p.aciklama}</span>
+                                </div>
+                                <div className="flex items-center text-gray-600">
+                                    <FaMapMarkerAlt className="mr-2" />
+                                    <span>{p.konum}</span>
+                                </div>
+                                <div className="flex items-center text-gray-600">
+                                    <FaCalendarAlt className="mr-2" />
+                                    <span>{p.tarih}</span>
+                                </div>
+                            </div>
+
+                            <div className="border-t pt-6">
+                                <h2 className="text-xl font-semibold mb-4 text-gray-800">Proje Hakkında</h2>
+                                <div className="text-gray-600 leading-relaxed">
+                                    {p.bilgi}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

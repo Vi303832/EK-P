@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router";
 
 function P2Card({ props }) {
-    let { kategori, İsim, Açıklama, img, link } = props
+    let { kategori, isim, aciklama, img, link } = props
     let navigate = useNavigate()
 
     let handlenav = () => {
@@ -15,7 +15,7 @@ function P2Card({ props }) {
                 <div className='w-full h-full overflow-hidden'>
                     <img
                         src={img}
-                        alt={İsim}
+                        alt={isim}
                         className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 '
                         loading="lazy"
                     />
@@ -30,11 +30,11 @@ function P2Card({ props }) {
                     </div>
 
                     <h3 className='text-xl font-semibold text-gray-800 hover:text-[#EE1B24] transition-colors duration-300 line-clamp-2'>
-                        {İsim}
+                        {isim}
                     </h3>
 
                     <p className='text-gray-600 text-sm leading-relaxed line-clamp-3'>
-                        {Açıklama}
+                        {aciklama}
                     </p>
                 </div>
 

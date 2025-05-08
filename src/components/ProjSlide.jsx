@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -12,6 +13,8 @@ import Gelecek from "./Gelecek";
 const ProjectSlide = ({ selected }) => {
     const [slides, setSlides] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         setIsLoading(true);
@@ -57,6 +60,24 @@ const ProjectSlide = ({ selected }) => {
         return (
             <div className="w-full h-[35rem] flex items-center justify-center">
                 <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-amber-400"></div>
+            </div>
+        );
+    }
+    if (slides.length === 1) {
+        return (
+            <div className="w-full h-[20rem] flex flex-col items-center justify-center gap-6 bg-gray-800/50 rounded-lg shadow-lg p-8">
+                <div className="text-3xl text-white font-semibold text-center">
+                    Şu an proje bulunmamaktadır
+                </div>
+                <button
+                    onClick={() => navigate("/BitenProjeler")}
+                    className='bg-amber-400 hover:bg-amber-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg'
+                >
+                    <span>Biten Projeleri Görüntüle</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                </button>
             </div>
         );
     }
