@@ -106,7 +106,7 @@ function ContactDisplay() {
                                 <button
                                     type="submit"
                                     disabled={status === 'submitting'}
-                                    className="w-full bg-[#EE1B24] text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-medium disabled:opacity-75 cursor-pointer"
+                                    className="w-full bg-[#EE1B24] text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-medium disabled:opacity-75"
                                 >
                                     {status === 'submitting' ? 'Gönderiliyor...' : 'Gönder'}
                                 </button>

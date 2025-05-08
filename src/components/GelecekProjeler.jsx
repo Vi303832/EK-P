@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PCard from './PCard'
 import Gelecek from './Gelecek'
 import P2Card from './P2Card'
@@ -14,13 +14,29 @@ function GelecekProjeler() {
     const navigate = useNavigate();
     const realProjects = Gelecek.filter(project => project.id !== "all");
 
+    // Pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const projectsPerPage = 6;
+    const totalPages = Math.ceil(realProjects.length / projectsPerPage);
+    const startIdx = (currentPage - 1) * projectsPerPage;
+    const endIdx = startIdx + projectsPerPage;
+    const currentProjects = realProjects.slice(startIdx, endIdx);
+
+    const handlePageChange = (page) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
+            window.scrollTo(0, 0);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 font-Poppins">
-            <div className='py-32 bg-gradient-to-r from-gray-600 to-gray-500 text-white flex items-center justify-center text-4xl font-semibold shadow-lg text-center'>
-                <div className="flex items-center whitespace-nowrap">
-                    <FaCalendarAlt className="mr-4" />
-                    <h1 className="max-md:text-2xl">Gelecek Projelerimiz</h1>
-                </div>
+            {/* Banner Alanı */}
+            <div className='py-20 bg-[#EE1B24] text-white flex flex-col items-center justify-center text-center shadow-lg'>
+                <h1 className="text-5xl font-bold mb-4 max-md:text-3xl">Gelecek Projelerimiz</h1>
+                <p className="text-xl max-w-2xl mx-auto font-normal max-md:text-base">
+                    Ekip İnşaat olarak, yakında hayata geçireceğimiz projelerimizi keşfedin.
+                </p>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -32,7 +48,7 @@ function GelecekProjeler() {
                         </p>
                         <button
                             onClick={() => navigate("/BitenProjeler")}
-                            className="bg-amber-400 hover:bg-amber-500 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-xl"
+                            className="bg-[#EE1B24] hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-xl cursor-pointer"
                         >
                             <span>Biten Projeleri Görüntüle</span>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -41,13 +57,43 @@ function GelecekProjeler() {
                         </button>
                     </div>
                 ) : (
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-                        {realProjects.map((props, index) => (
-                            <div key={index} className="transform hover:scale-105 transition-transform duration-300">
-                                <P2Card props={props} />
+                    <>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                            {currentProjects.map((props, index) => (
+                                <div key={index} className="transform hover:scale-105 transition-transform duration-300">
+                                    <P2Card props={props} />
+                                </div>
+                            ))}
+                        </div>
+                        {/* Pagination */}
+                        {totalPages > 1 && (
+                            <div className="flex justify-center items-center gap-2 mt-10">
+                                <button
+                                    onClick={() => handlePageChange(currentPage - 1)}
+                                    disabled={currentPage === 1}
+                                    className="px-4 py-2 rounded bg-gray-200 text-gray-700 font-semibold disabled:opacity-50 hover:bg-gray-300 transition-colors"
+                                >
+                                    Önceki
+                                </button>
+                                {Array.from({ length: totalPages }, (_, i) => (
+                                    <button
+                                        key={i}
+                                        onClick={() => handlePageChange(i + 1)}
+                                        className={`w-10 h-10 rounded-full font-semibold flex items-center justify-center ${currentPage === i + 1 ? 'bg-[#EE1B24] text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'} transition-colors`}
+                                    >
+                                        {i + 1}
+                                    </button>
+                                ))}
+                                <button
+                                    onClick={() => handlePageChange(currentPage + 1)}
+                                    disabled={currentPage === totalPages}
+                                    className="px-4 py-2 rounded bg-gray-200 text-gray-700 font-semibold disabled:opacity-50 hover:bg-gray-300 transition-colors"
+                                >
+                                    Sonraki
+                                </button>
                             </div>
-                        ))}
-                    </div>
+                        )}
+                    </>
                 )}
             </div>
         </div>

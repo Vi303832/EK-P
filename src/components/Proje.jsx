@@ -1,13 +1,15 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Biten from "./Biten";
 import Devam from "./Devam";
 import Gelecek from "./Gelecek";
-import { useEffect, useState } from "react";
-import { FaMapMarkerAlt, FaCalendarAlt, FaBuilding } from 'react-icons/fa';
+import { useEffect, useState, useRef } from "react";
+import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Proje = () => {
     const { id } = useParams();
     const [selectedImage, setSelectedImage] = useState(0);
+    const navigate = useNavigate();
+    const sliderRef = useRef(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -23,69 +25,134 @@ const Proje = () => {
         return <div className="min-h-screen flex items-center justify-center text-2xl">Proje bulunamadı</div>;
     }
 
+    const handleContactClick = () => {
+        navigate("/iletişim");
+    };
+
+    const scrollLeft = () => {
+        if (sliderRef.current) {
+            sliderRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+        }
+    };
+
+    const scrollRight = () => {
+        if (sliderRef.current) {
+            sliderRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+        }
+    };
+
     return (
-        <div className="min-h-screen bg-gray-50">
-            <div className="py-32 md:py-20 lg:py-24 flex justify-center items-center text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-gray-600 to-gray-500 text-white font-semibold">
-                {p.kategori}
+        <div className="min-h-screen font-Poppins">
+            {/* Üst kısım - Proje başlığı - Büyütülmüş */}
+            <div className="py-20 bg-[#0E1117] text-white">
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-col items-start">
+                        <div className="mb-3">
+                            <a href="/" className="text-sm text-gray-400 hover:text-[#EE1B24] transition-colors">
+                                Gayrimenkul
+                            </a>
+                        </div>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6">{p.isim}</h1>
+                        <div className="flex flex-wrap gap-4 text-sm md:text-base">
+                            {p.konum && (
+                                <div className="flex items-center">
+                                    <FaMapMarkerAlt className="mr-1 text-[#EE1B24]" />
+                                    <span>{p.konum}</span>
+                                </div>
+                            )}
+                            {p.kategori && (
+                                <div className="flex items-center">
+                                    <div className="w-2 h-2 bg-[#EE1B24] rounded-full mx-2"></div>
+                                    <span>{p.kategori}</span>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className="container mx-auto px-4 py-8 md:py-12">
-                <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
-                    {/* Sol taraf - Resim Galerisi */}
-                    <div className="w-full lg:w-2/3">
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                            <img
-                                src={p.images ? p.images[selectedImage] : p.img}
-                                alt={p.İsim}
-                                className="w-full h-[400px] object-cover"
-                            />
+            <div className="container mx-auto px-4 py-10">
+                <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Sol taraf - Resim Galerisi - Büyütülmüş */}
+                    <div className="w-full lg:w-3/5">
+                        <div className="rounded-lg shadow-md overflow-hidden">
+                            <div className="relative">
+                                <img
+                                    src={p.images ? p.images[selectedImage] : p.img}
+                                    alt={p.isim}
+                                    className="w-full h-[500px] md:h-[550px] object-cover"
+                                />
+                                {p.kategori === "Biten Projeler" && (
+                                    <div className="absolute top-4 left-0 bg-[#EE1B24] text-white px-4 py-1 text-sm font-medium">
+                                        Ekip İnşaat
+                                    </div>
+                                )}
+                            </div>
 
-                            {/* Küçük resimler */}
+                            {/* Küçük resimler - Slider - Minimalist tasarım */}
                             {p.images && (
-                                <div className="grid grid-cols-4 gap-2 p-4">
-                                    {p.images.map((image, index) => (
-                                        <img
-                                            key={index}
-                                            src={image}
-                                            alt={`${p.İsim} - ${index + 1}`}
-                                            className={`w-full h-20 object-cover cursor-pointer rounded-lg transition-all ${selectedImage === index ? 'ring-2 ring-blue-500' : 'hover:opacity-80'
-                                                }`}
-                                            onClick={() => setSelectedImage(index)}
-                                        />
-                                    ))}
+                                <div className="relative py-4 px-8 mt-2">
+                                    <button
+                                        onClick={scrollLeft}
+                                        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 text-gray-700 p-2 bg-transparent hover:text-[#EE1B24] transition-colors"
+                                    >
+                                        <FaChevronLeft size={20} />
+                                    </button>
+
+                                    <div
+                                        ref={sliderRef}
+                                        className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth"
+                                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                                    >
+                                        {p.images.map((image, index) => (
+                                            <div
+                                                key={index}
+                                                className="flex-shrink-0 w-[calc(25%-6px)]"
+                                            >
+                                                <img
+                                                    src={image}
+                                                    alt={`${p.isim} - ${index + 1}`}
+                                                    className={`w-full h-20 object-cover cursor-pointer rounded transition-all
+                                                    ${selectedImage === index ? 'ring-2 ring-[#EE1B24]' : 'opacity-80 hover:opacity-100'}`}
+                                                    onClick={() => setSelectedImage(index)}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <button
+                                        onClick={scrollRight}
+                                        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 text-gray-700 p-2 bg-transparent hover:text-[#EE1B24] transition-colors"
+                                    >
+                                        <FaChevronRight size={20} />
+                                    </button>
                                 </div>
                             )}
                         </div>
                     </div>
 
                     {/* Sağ taraf - Proje Detayları */}
-                    <div className="w-full lg:w-1/3">
-                        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-                            <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
-                                {p.isim}
-                            </h1>
-
-                            <div className="space-y-4 mb-6">
-                                <div className="flex items-center text-gray-600">
-                                    <FaBuilding className="mr-2" />
-                                    <span>{p.aciklama}</span>
-                                </div>
-                                <div className="flex items-center text-gray-600">
-                                    <FaMapMarkerAlt className="mr-2" />
-                                    <span>{p.konum}</span>
-                                </div>
-                                <div className="flex items-center text-gray-600">
-                                    <FaCalendarAlt className="mr-2" />
-                                    <span>{p.tarih}</span>
-                                </div>
+                    <div className="w-full lg:w-2/5">
+                        <div className="bg-white rounded-lg shadow-md p-6">
+                            <h2 className="text-xl font-bold mb-4 text-gray-800">Proje Bilgisi</h2>
+                            <div className="prose max-w-none">
+                                <p className="text-gray-700 mb-6">
+                                    {p.bilgi || p.isim}
+                                </p>
                             </div>
+                        </div>
 
-                            <div className="border-t pt-6">
-                                <h2 className="text-xl font-semibold mb-4 text-gray-800">Proje Hakkında</h2>
-                                <div className="text-gray-600 leading-relaxed">
-                                    {p.bilgi}
-                                </div>
-                            </div>
+                        <div className="mt-6 bg-[#EE1B24] text-white p-6 rounded-lg shadow-md">
+                            <h3 className="text-xl font-bold mb-4 text-center">Hayalinizdeki Projeyi Birlikte Gerçekleştirelim</h3>
+                            <p className="text-center mb-6">Ekip İnşaat olarak, 20 yılı aşkın tecrübemiz ve uzman kadromuzla projelerinizi hayata geçiriyoruz.</p>
+                            <button
+                                onClick={handleContactClick}
+                                className="w-full bg-white text-[#EE1B24] py-3 px-4 rounded font-medium 
+                                hover:bg-[#EE1B24] hover:text-white border-2 border-white
+                                transition-all duration-300 active:scale-95 focus:outline-none"
+                            >
+                                Bizimle İletişime Geçin
+                            </button>
                         </div>
                     </div>
                 </div>

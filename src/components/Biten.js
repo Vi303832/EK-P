@@ -24,7 +24,11 @@ const Biten = [
             "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692272/IMG-20250506-WA0035_i895yn.jpg",
             "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692272/IMG-20250506-WA0007_jostsp.jpg",
             "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692272/IMG-20250506-WA0007_jostsp.jpg",
-            "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692273/IMG-20250506-WA0037_bcfebt.jpg"
+            "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692273/IMG-20250506-WA0037_bcfebt.jpg",
+
+            "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692272/IMG-20250506-WA0007_jostsp.jpg",
+            "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692272/IMG-20250506-WA0007_jostsp.jpg",
+            "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746692273/IMG-20250506-WA0037_bcfebt.jpg",
         ],
         tarih: 2023,
         konum: "Mudanya/Bursa",
