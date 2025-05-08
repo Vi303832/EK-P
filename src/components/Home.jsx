@@ -55,10 +55,10 @@ function Home() {
             <div>
                 <NedenBiz />
             </div>
-            <div className='bg-black'>
+            <div className='bg-neutral-900'>
                 <ProjeDisplay />
             </div>
-            <div>
+            <div className=''>
                 <ContactDisplay />
             </div>
         </div>

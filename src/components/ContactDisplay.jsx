@@ -6,7 +6,7 @@ function ContactDisplay() {
     let navigate = useNavigate()
 
     return (
-        <div className='bg-black px-10 max-sm:px-0 pt-30'>
+        <div className='bg-neutral-900 px-10 max-sm:px-0 pt-30'>
             <div className='bg-yellow-50 h-[30rem] relative w-full '>
 
                 <span className='absolute h-full w-full bg-black top-0 z-10 opacity-30 pointer-events-none '></span>
@@ -20,7 +20,7 @@ function ContactDisplay() {
                         </div>
                     </div>
                 </div>
-                <img src={CBg} className='h-full w-full object-contain max-lg:object-cover  bg-lacivert' />
+                <img src={CBg} className='h-full w-full object-contain max-lg:object-cover  bg-black' />
 
 
             </div>
