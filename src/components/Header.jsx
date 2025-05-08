@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Logo from "../assets/WEkipLogo.png"
 import { useNavigate } from 'react-router-dom'
 import { FaBars } from "react-icons/fa";
@@ -8,12 +8,12 @@ function Header() {
 
     const [display, setdisplay] = useState(false)
     const [isHovered, setIsHovered] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState(false);
     const projects = [
-        { id: 1, title: 'Biten Projeler' },
-        { id: 2, title: 'Devam Eden Projeler' },
-        { id: 3, title: 'Gelecek Projeler' },
+        { id: 1, title: 'Biten Projeler', path: '/BitenProjeler' },
+        { id: 2, title: 'Devam Eden Projeler', path: '/DevamEdenProjeler' },
+        { id: 3, title: 'Gelecek Projeler', path: '/GelecekProjeler' },
     ];
-
 
     let [bar, setbar] = useState(false)
 
@@ -27,7 +27,12 @@ function Header() {
         setbar(false)
         setdisplay(false)
         setIsHovered(false)
+        setActiveDropdown(false)
         navigate(path)
+    }
+
+    const toggleDropdown = () => {
+        setActiveDropdown(!activeDropdown);
     }
 
     return (
@@ -144,41 +149,49 @@ function Header() {
                         </div>
                     </div>
 
-                    <div className={`flex w-full justify-end items-center h-full text-white opacity-90 gap-10 max-xl:hidden relative top-1 ${window.location.pathname === '/' ? 'max-xl:hidden' : 'min-md:flex'}`}>
+                    <div className={`flex w-full justify-end items-center h-full text-white opacity-90 gap-15 max-xl:hidden relative top-1 ${window.location.pathname === '/' ? 'max-xl:hidden' : 'min-md:flex'}`}>
 
-                        <div onClick={() => handlenavigate("/")} className='cursor-pointer hover:relative hover:top-1   w-16 hover:h-10 h-5'>
+                        <div onClick={() => handlenavigate("/")} className='cursor-pointer hover:relative hover:top-[-4px] w-16 hover:h-5 h-5 transition-all duration-200 py-10 flex justify-center items-center'>
                             Anasayfa
                         </div>
 
-                        <div
-                            className={`cursor-pointer   px-16 flex flex-col  items-center justify-start  gap-5 w-16 ${isHovered ? 'h-60 top-[102px] relative ' : 'h-5'
-                                }`}
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                        >
-                            <a
-                                onClick={() => handlenavigate("/")}
-                                href='#proje' className={` ${window.location.pathname === '/' ? '' : 'min-md:block'}`}>Projeler</a>
-                            <div onClick={() => handlenavigate("/BitenProjeler")} className={` ${window.location.pathname === '/' ? '' : 'min-md:block'} transition-all duration-300  relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg mt-8 text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30 mt-8"}`}>
-                                Biten Projeler
-                            </div>
-                            <div onClick={() => handlenavigate("/DevamEdenProjeler")} className={` ${window.location.pathname === '/' ? '' : '  min-md:block'} transition-all duration-300 relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30"}`}>
-                                Devam Eden Projeler
-                            </div>
-                            <div onClick={() => handlenavigate("/GelecekProjeler")} className={` ${window.location.pathname === '/' ? '' : 'min-md:block'} transition-all duration-300 relative py-2 hover:bg-gray-100 ${isHovered ? "bg-white rounded-lg text-black w-40 text-center left-0 shadow-lg hover:scale-105" : "h-0 opacity-0 left-30"}`}>
-                                Gelecek Projeler
+                        <div className="relative w-16 group">
+                            <button
+                                className="cursor-pointer w-full text-center hover:relative hover:top-[-4px] hover:h-5 h-5 transition-all duration-200  py-10 flex justify-center items-center"
+                            >
+                                Projeler
+                            </button>
+
+                            <div
+                                className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-white rounded-lg shadow-xl transition-all duration-300 ease-in-out overflow-hidden opacity-0 max-h-0 group-hover:max-h-[300px] group-hover:opacity-100"
+                            >
+                                {projects.map((project, index) => (
+                                    <React.Fragment key={project.id}>
+                                        <div
+                                            onClick={() => handlenavigate(project.path)}
+                                            className="py-3 px-4 text-black text-center cursor-pointer hover:bg-red-50 hover:text-red-600 transition-all duration-200"
+                                            style={{
+                                                transitionDelay: `${index * 100}ms`
+                                            }}
+                                        >
+                                            {project.title}
+                                        </div>
+                                        {index !== projects.length - 1 && (
+                                            <hr className="border-gray-200" />
+                                        )}
+                                    </React.Fragment>
+                                ))}
                             </div>
                         </div>
 
-                        <div onClick={() => handlenavigate("/iletişim")} className='cursor-pointer hover:relative hover:top-1   w-16 hover:h-10 h-5'>
+                        <div onClick={() => handlenavigate("/iletişim")} className='cursor-pointer hover:relative hover:top-[-4px] w-16 hover:h-5 h-5 transition-all duration-200 py-10 flex justify-center items-center'>
                             İletişim
                         </div>
-                        <div onClick={() => handlenavigate("/Hakkımızda")} className='cursor-pointer hover:relative hover:top-1 hover:h-10 w-16 h-5'>
+                        <div onClick={() => handlenavigate("/Hakkımızda")} className='cursor-pointer hover:relative hover:top-[-4px] hover:h-5 w-16 h-5 transition-all duration-200 py-10 flex justify-center items-center'>
                             Hakkımızda
                         </div>
 
                     </div>
-
                 </div>
 
             </div>

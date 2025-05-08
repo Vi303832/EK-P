@@ -43,16 +43,16 @@ function DefaultHeader() {
         navigate(path);
     };
 
-    const headerClasses = `fixed top-0 left-0 w-full z-50 font-Poppins transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-white/90'
+    const headerClasses = ` top-0 left-0 w-full z-50 font-Poppins transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-white/90'
         }`;
 
     return (
         <header className={headerClasses}>
-            <nav className="container mx-auto flex items-center justify-between px-4 md:px-8 py-4 h-[70px]">
+            <nav className="container mx-auto flex items-center justify-between px-4 md:px-8 py-4 h-[90px]">
                 {/* Logo */}
                 <div className="flex flex-col items-center cursor-pointer" onClick={() => handleNavigate('/')}>
-                    <div className="h-12 sm:h-14 w-auto flex items-center justify-center">
-                        <img src={Logo} alt="Ekip Logo" className="h-full object-contain w-auto max-w-[120px] sm:max-w-[140px]" />
+                    <div className='h-[120%]  flex justify-center mx-10 max-md:mx-5'>
+                        <img src={Logo} onClick={() => handleNavigate("/")} className='h-full object-cover cursor-pointer w-[100px]' />
                     </div>
                 </div>
 
