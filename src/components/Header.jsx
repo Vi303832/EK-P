@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from "../assets/EkipLogo.png"
+import Logo from "../assets/WEkipLogo.png"
 import { useNavigate } from 'react-router-dom'
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
@@ -83,8 +83,8 @@ function Header() {
             {/*Maxmd*/}
 
             <div className='w-full h-full flex '>
-                <div className='h-[120%] flex justify-center  px-20 max-md:px-10'>
-                    <img src={Logo} onClick={() => handlenavigate("/")} className='h-full w-[90px] max-md:w-[150px] object-cover  cursor-pointer ' />
+                <div className='h-[120%] flex justify-center mx-20 max-md:mx-10'>
+                    <img src={Logo} onClick={() => handlenavigate("/")} className='h-full object-cover cursor-pointer w-[100px]' />
                 </div>
                 <div className='relative  right-10 max-xl:top-5 w-full max-md:top-8 '>
                     <div className='justify-end flex max-md:items-center '>

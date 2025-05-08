@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaInstagram, FaFacebookF, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
-import Logo from '../assets/EkipLogo.png'; // Adjust the path to your logo image
+import Logo from '../assets/WEkipLogo.png'; // Adjust the path to your logo image
 
 function Footer() {
     return (

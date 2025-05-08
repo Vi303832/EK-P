@@ -16,6 +16,7 @@ function Home() {
 
     return (
         <div className='min-h-screen w-full overflow-hidden font-Poppins'>
+            {/*Landing*/}
             <div className='h-screen w-full relative'>
                 <div className='h-full w-full relative'>
                     {/* Black overlay */}
