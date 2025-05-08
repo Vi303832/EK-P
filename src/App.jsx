@@ -10,6 +10,7 @@ import DevamProjeler from './components/DevamEdenProjeler'
 import İletişim from "./components/İletişim"
 import Hakkımızda from "./components/Hakkımızda"
 import DefaultHeader from './components/DefaultHeader'
+import NotFound from './components/NotFound'
 
 function App() {
 
@@ -64,6 +65,14 @@ function App() {
             <>
               <DefaultHeader />
               <Hakkımızda />
+              <Footer />
+            </>
+          } />
+
+          <Route path='*' element={
+            <>
+              <DefaultHeader />
+              <NotFound />
               <Footer />
             </>
           } />

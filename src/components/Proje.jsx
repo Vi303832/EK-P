@@ -4,6 +4,7 @@ import Devam from "./Devam";
 import Gelecek from "./Gelecek";
 import { useEffect, useState, useRef } from "react";
 import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight, FaCalendarAlt } from 'react-icons/fa';
+import NotFound from "./NotFound";
 
 const Proje = () => {
     const { id } = useParams();
@@ -18,11 +19,16 @@ const Proje = () => {
     // Biten, Devam ve Gelecek dizilerini birleştir
     const tumProjeler = [...Biten, ...Devam, ...Gelecek];
 
+    // Geçerli proje ID formatlarını kontrol et
+    const validIdPattern = /^(B|D|G)\d+$/; // B, D veya G ile başlayan ve sayı ile devam eden ID'ler
+    const isValidIdFormat = validIdPattern.test(id);
+
     // id'yi kullanarak ilgili projeyi bul
     const p = tumProjeler.find(item => item.id === id);
 
-    if (!p) {
-        return <div className="min-h-screen flex items-center justify-center text-2xl">Proje bulunamadı</div>;
+    // Eğer proje bulunamazsa veya ID formatı geçersizse 404 sayfasına yönlendir
+    if (!p || !isValidIdFormat) {
+        return <NotFound />;
     }
 
     const handleContactClick = () => {
