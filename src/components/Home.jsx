@@ -5,6 +5,7 @@ import ProjeDisplay from './ProjeDisplay'
 import NedenBiz from './NedenBiz'
 import ContactDisplay from './ContactDisplay'
 import { useNavigate } from 'react-router-dom'
+import SEO from './SEO'
 
 function Home() {
     const navigate = useNavigate()
@@ -16,6 +17,11 @@ function Home() {
 
     return (
         <div className='min-h-screen w-full overflow-hidden font-Poppins'>
+            <SEO
+                title="Ekip İnşaat | Ana Sayfa"
+                description="Ekip İnşaat - Güven ve kalite, başarının temeli. Geleceğe yön veren projelerle yanınızdayız."
+                canonicalUrl="/"
+            />
             {/*Landing*/}
             <div className='h-screen w-full relative'>
                 <div className='h-full w-full relative'>

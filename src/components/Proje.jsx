@@ -5,6 +5,7 @@ import Gelecek from "./Gelecek";
 import { useEffect, useState, useRef } from "react";
 import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight, FaCalendarAlt } from 'react-icons/fa';
 import NotFound from "./NotFound";
+import SEO from './SEO';
 
 const Proje = () => {
     const { id } = useParams();
@@ -47,8 +48,21 @@ const Proje = () => {
         }
     };
 
+    // Projenin türünü belirle (Biten, Devam Eden, Gelecek)
+    const projeType = id.startsWith('B') ? 'Biten' : id.startsWith('D') ? 'Devam Eden' : 'Gelecek';
+
+    // SEO için proje özet bilgisi oluştur
+    const projeDescription = `${p.isim} - ${projeType} projesi. ${p.konum || ''}. ${p.bilgi || 'Ekip İnşaat kalitesiyle tamamlanan projemiz hakkında detaylı bilgi alın.'}`
+
     return (
         <div className="min-h-screen font-Poppins">
+            <SEO
+                title={`Ekip İnşaat | ${p.isim}`}
+                description={projeDescription}
+                keywords={`${p.isim}, ${p.kategori || 'inşaat projesi'}, ${p.konum || ''}, Ekip İnşaat, ${projeType} proje`}
+                canonicalUrl={`/${id}`}
+                ogImage={p.images ? p.images[0] : p.img}
+            />
             {/* Üst kısım - Proje başlığı - Büyütülmüş */}
             <div className="py-20 bg-[#0E1117] text-white">
                 <div className="container mx-auto px-4">

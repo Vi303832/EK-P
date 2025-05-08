@@ -5,6 +5,7 @@ import P2Card from './P2Card'
 import "./Gelecek.js"
 import { FaCalendarAlt } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import SEO from './SEO'
 
 function GelecekProjeler() {
     useEffect(() => {
@@ -31,6 +32,12 @@ function GelecekProjeler() {
 
     return (
         <div className="min-h-screen bg-gray-50 font-Poppins">
+            <SEO
+                title="Ekip İnşaat | Gelecek Projelerimiz"
+                description="Ekip İnşaat'ın yakın gelecekte hayata geçirilecek projeleri. Planlanan inşaat projeleri ve gelecek vizyonumuz hakkında bilgi edinin."
+                keywords="gelecek projeler, planlanan projeler, Ekip İnşaat, yeni inşaat projeleri, yakında başlayacak projeler"
+                canonicalUrl="/GelecekProjeler"
+            />
             {/* Banner Alanı */}
             <div className='py-20 bg-[#EE1B24] text-white flex flex-col items-center justify-center text-center shadow-lg'>
                 <h1 className="text-5xl font-bold mb-4 max-md:text-3xl">Gelecek Projelerimiz</h1>

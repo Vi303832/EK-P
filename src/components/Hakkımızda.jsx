@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaBuilding, FaUsers, FaHistory, FaLightbulb, FaCheckCircle, FaHome, FaRecycle, FaLeaf, FaShieldAlt, FaImages } from 'react-icons/fa'
 import { useEffect } from 'react';
+import SEO from './SEO'
 
 function Hakkımızda() {
     useEffect(() => {
@@ -31,6 +32,12 @@ function Hakkımızda() {
 
     return (
         <div className='font-Poppins'>
+            <SEO
+                title="Ekip İnşaat | Hakkımızda"
+                description="2012'den beri Bursa ve çevresinde kaliteli konut projeleri inşa eden Ekip İnşaat. Misyonumuz, vizyonumuz ve gerçekleştirdiğimiz projeler hakkında bilgi edinin."
+                keywords="Ekip İnşaat hakkında, şirket profili, Bursa inşaat firması, kentsel dönüşüm, TOKİ işbirliği, misyon vizyon, inşaat sektörü"
+                canonicalUrl="/Hakkımızda"
+            />
             <div className='py-32 bg-[#EE1B24] text-white justify-center flex text-4xl items-center'>
                 <FaBuilding className="mr-4" /> Hakkımızda
             </div>

@@ -5,6 +5,7 @@ import P2Card from './P2Card'
 import "./Devam.js"
 import { FaSpinner } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import SEO from './SEO'
 
 function DevamEdenProjeler() {
     useEffect(() => {
@@ -31,6 +32,12 @@ function DevamEdenProjeler() {
 
     return (
         <div className="min-h-screen bg-gray-50 font-Poppins">
+            <SEO
+                title="Ekip İnşaat | Devam Eden Projelerimiz"
+                description="Ekip İnşaat'ın şu anda inşaatı devam eden tüm projeleri. Mevcut inşaat aşamalarını, proje detaylarını ve planlanan tamamlanma tarihlerini inceleyebilirsiniz."
+                keywords="devam eden projeler, inşaatı devam eden projeler, Ekip İnşaat, devam eden inşaat projeleri, inşaat aşamaları"
+                canonicalUrl="/DevamEdenProjeler"
+            />
             {/* Banner Alanı */}
             <div className='py-20 bg-[#EE1B24] text-white flex flex-col items-center justify-center text-center shadow-lg'>
                 <h1 className="text-5xl font-bold mb-4 max-md:text-3xl">Devam Eden Projelerimiz</h1>

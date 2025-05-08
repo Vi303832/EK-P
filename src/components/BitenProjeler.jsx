@@ -4,12 +4,15 @@ import Biten from './Biten'
 import P2Card from './P2Card'
 import "./Biten.js"
 import { FaCheckCircle } from 'react-icons/fa'
+import SEO from './SEO'
+import { useNavigate } from 'react-router-dom'
 
 function BitenProjeler() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    const navigate = useNavigate();
     const realProjects = Biten.filter(project => project.id !== "all");
 
     // Pagination
@@ -29,6 +32,12 @@ function BitenProjeler() {
 
     return (
         <div className="min-h-screen bg-gray-50 font-Poppins">
+            <SEO
+                title="Ekip İnşaat | Biten Projelerimiz"
+                description="Ekip İnşaat'ın tamamlanmış tüm projeleri. Modern mimari ve kaliteli işçilik ile hayata geçirdiğimiz projelerimizi keşfedin."
+                keywords="tamamlanan projeler, biten projeler, Ekip İnşaat, inşaat projeleri, tamamlanmış inşaat projeleri"
+                canonicalUrl="/BitenProjeler"
+            />
             {/* Banner Alanı */}
             <div className='py-20 bg-[#EE1B24] text-white flex flex-col items-center justify-center text-center shadow-lg'>
                 <h1 className="text-5xl font-bold mb-4 max-md:text-3xl">Projelerimiz</h1>
@@ -39,8 +48,20 @@ function BitenProjeler() {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 {realProjects.length === 0 ? (
-                    <div className="flex justify-center items-center h-[400px]">
-                        <h2 className="text-2xl text-gray-600 font-semibold">Henüz proje yok</h2>
+                    <div className="flex flex-col justify-center items-center h-[400px] bg-gray-800/5 rounded-xl p-8 space-y-6">
+                        <h2 className="text-3xl text-gray-700 font-semibold text-center">Henüz Tamamlanmış Proje Bulunmamaktadır</h2>
+                        <p className="text-gray-500 text-center max-w-lg">
+                            Şu an için tamamlanmış projemiz bulunmuyor. Devam eden projelerimizi inceleyebilirsiniz.
+                        </p>
+                        <button
+                            onClick={() => navigate("/DevamEdenProjeler")}
+                            className="bg-[#EE1B24] hover:bg-red-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-xl cursor-pointer"
+                        >
+                            <span className='cursor-pointer'>Devam Eden Projeleri Görüntüle</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </button>
                     </div>
                 ) : (
                     <>

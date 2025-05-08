@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaEnvelope, FaPhone, FaComment, FaPaperPlane, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa'
 import { useEffect } from 'react';
+import SEO from './SEO'
 
 function İletişim() {
     const [status, setStatus] = useState('');
@@ -33,6 +34,12 @@ function İletişim() {
 
     return (
         <div className='font-Poppins'>
+            <SEO
+                title="Ekip İnşaat | İletişim"
+                description="Ekip İnşaat ile iletişime geçin. Adres, telefon, e-posta bilgilerimiz ve online iletişim formu ile sorularınızı yanıtlamak için buradayız."
+                keywords="iletişim, Ekip İnşaat iletişim, Bursa inşaat firması iletişim, adres, telefon, e-posta, iletişim formu"
+                canonicalUrl="/iletişim"
+            />
             <div className='py-32 bg-[#EE1B24] text-white justify-center flex text-4xl font-semibold'>
                 <FaEnvelope className="mr-4 text-4xl" /> İletişim
             </div>

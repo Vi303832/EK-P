@@ -1,11 +1,8 @@
-import Bitenpng from "./Biten.png";
-import slide1 from "../assets/Slider1/slide3.jpeg";
-import Gelecekpng from "./Gelecek.png";
 
 const Gelecek = [
     {
         isim: "Bütün Gelecek Projeler",
-        img: Gelecekpng,
+        img: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746743261/ChatGPT_Image_May_9_2025_01_26_59_AM_hfrmej.png",
         link: "/GelecekProjeler",
         id: "all"
     },
