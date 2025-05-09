@@ -1,6 +1,6 @@
 # Ekip İnşaat - Kurumsal Web Sitesi
 
-🔗 [Canlı Demo](https://ekip-beta.vercel.app/)
+🔗 [Canlı Demo](https://www.ekipboya.com/)
 
 ## Proje Açıklaması
 

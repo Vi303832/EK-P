@@ -4,7 +4,7 @@ function SEO({ title, description, keywords, canonicalUrl, ogImage }) {
     const defaultTitle = 'Ekip İnşaat | Güven ve Kalite';
     const defaultDescription = 'Ekip İnşaat - Güven ve kalite, başarının temeli. Geleceğe yön veren projelerle yanınızdayız.';
     const defaultKeywords = 'Ekip İnşaat, inşaat, projeler, biten projeler, devam eden projeler, gelecek projeler, Türkiye';
-    const siteUrl = 'https://ekip-beta.vercel.app/'; // Update with your actual domain
+    const siteUrl = 'https://www.ekipboya.com/'; // Updated domain
 
     return (
         <Helmet>
