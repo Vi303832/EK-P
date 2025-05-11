@@ -20,6 +20,7 @@ function Footer() {
                 <button
                     onClick={scrollToTop}
                     className="bg-[#EE1B24] hover:bg-red-700 transition-colors p-3 rounded-full relative -top-6 shadow-lg"
+                    aria-label="Sayfanın başına dön"
                 >
                     <FaChevronUp className="text-white text-xl" />
                 </button>
@@ -30,10 +31,17 @@ function Footer() {
                     {/* Logo and About */}
                     <div className="flex flex-col space-y-4">
                         <div className="bg-white p-2 rounded-lg w-40 h-auto">
-                            <img src={Logo} alt="Ekip Grup İnşaat Logo" className="w-full h-full object-contain" />
+                            <img
+                                src={Logo}
+                                alt="Ekip Grup İnşaat Logo"
+                                className="w-full h-full object-contain"
+                                loading="lazy"
+                                width="160"
+                                height="80"
+                            />
                         </div>
-                        <p className='text-gray-300 text-sm  pb-1 w-fit hover:text-white transition-colors'>
-                            <span className="underline ">Güvenilir İnşaat Çözümleri</span>
+                        <p className='text-gray-300 text-sm pb-1 w-fit hover:text-white transition-colors'>
+                            <span className="underline">Güvenilir İnşaat Çözümleri</span>
                         </p>
                         <p className='text-gray-400 text-xs'>Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat ile güvenilir çözümler.</p>
                     </div>
@@ -42,10 +50,34 @@ function Footer() {
                     <div className="flex flex-col space-y-4">
                         <h3 className="text-xl font-semibold border-b border-[#EE1B24] pb-2 w-fit">Hızlı Erişim</h3>
                         <div className="flex flex-col space-y-2">
-                            <a onClick={() => navigate("/")} className="hover:text-[#EE1B24] transition-colors cursor-pointer">Anasayfa</a>
-                            <a onClick={() => navigate("/Hakkımızda")} className="hover:text-[#EE1B24] transition-colors cursor-pointer">Hakkımızda</a>
-                            <a onClick={() => navigate("/BitenProjeler")} className="hover:text-[#EE1B24] transition-colors cursor-pointer">Projelerimiz</a>
-                            <a onClick={() => navigate("/iletişim")} className="hover:text-[#EE1B24] transition-colors cursor-pointer">İletişim</a>
+                            <button
+                                onClick={() => navigate("/")}
+                                className="hover:text-[#EE1B24] transition-colors cursor-pointer text-left"
+                                aria-label="Ana sayfaya git"
+                            >
+                                Anasayfa
+                            </button>
+                            <button
+                                onClick={() => navigate("/Hakkımızda")}
+                                className="hover:text-[#EE1B24] transition-colors cursor-pointer text-left"
+                                aria-label="Hakkımızda sayfasına git"
+                            >
+                                Hakkımızda
+                            </button>
+                            <button
+                                onClick={() => navigate("/BitenProjeler")}
+                                className="hover:text-[#EE1B24] transition-colors cursor-pointer text-left"
+                                aria-label="Projelerimiz sayfasına git"
+                            >
+                                Projelerimiz
+                            </button>
+                            <button
+                                onClick={() => navigate("/iletişim")}
+                                className="hover:text-[#EE1B24] transition-colors cursor-pointer text-left"
+                                aria-label="İletişim sayfasına git"
+                            >
+                                İletişim
+                            </button>
                         </div>
                     </div>
 
@@ -54,7 +86,7 @@ function Footer() {
                         <h3 className="text-xl font-semibold border-b border-[#EE1B24] pb-2 w-fit">İletişim</h3>
                         <div className="flex flex-col space-y-3">
                             <div className="flex items-start space-x-3">
-                                <FaMapMarkerAlt className="text-[#EE1B24] mt-1 flex-shrink-0" />
+                                <FaMapMarkerAlt className="text-[#EE1B24] mt-1 flex-shrink-0" aria-hidden="true" />
                                 <address className="not-italic text-sm text-gray-300">
                                     Camiikebir Mahallesi,<br />
                                     Kasımpaşa Tabakhane Cd.<br />
@@ -62,12 +94,18 @@ function Footer() {
                                 </address>
                             </div>
                             <div className="flex items-center space-x-3">
-                                <FaPhone className="text-[#EE1B24] flex-shrink-0" />
-                                <span className="text-gray-300">0224 453 00 08</span>
+                                <FaPhone className="text-[#EE1B24] flex-shrink-0" aria-hidden="true" />
+                                <a href="tel:+902244530008" className="text-gray-300 hover:text-[#EE1B24] transition-colors">
+                                    0224 453 00 08
+                                </a>
                             </div>
                             <div className="flex items-center space-x-3">
-                                <FaEnvelope className="text-[#EE1B24] flex-shrink-0" />
-                                <a href="mailto:insaat@ekipgrup.net" className="text-gray-300 hover:text-[#EE1B24] transition-colors">
+                                <FaEnvelope className="text-[#EE1B24] flex-shrink-0" aria-hidden="true" />
+                                <a
+                                    href="mailto:insaat@ekipgrup.net"
+                                    className="text-gray-300 hover:text-[#EE1B24] transition-colors"
+                                    aria-label="E-posta gönder"
+                                >
                                     insaat@ekipgrup.net
                                 </a>
                             </div>
@@ -84,24 +122,27 @@ function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-gray-800 hover:bg-[#EE1B24] transition-colors p-3 rounded-full"
+                                aria-label="Instagram sayfamızı ziyaret et"
                             >
-                                <FaInstagram className="text-white text-xl" />
+                                <FaInstagram className="text-white text-xl" aria-hidden="true" />
                             </a>
                             <a
                                 href="https://www.facebook.com/Ekib.Insaat"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-gray-800 hover:bg-[#EE1B24] transition-colors p-3 rounded-full"
+                                aria-label="Facebook sayfamızı ziyaret et"
                             >
-                                <FaFacebookF className="text-white text-xl" />
+                                <FaFacebookF className="text-white text-xl" aria-hidden="true" />
                             </a>
                             <a
                                 href="https://wa.me/902244530008"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-gray-800 hover:bg-[#EE1B24] transition-colors p-3 rounded-full"
+                                aria-label="WhatsApp ile iletişime geç"
                             >
-                                <FaWhatsapp className="text-white text-xl" />
+                                <FaWhatsapp className="text-white text-xl" aria-hidden="true" />
                             </a>
                         </div>
                     </div>

@@ -36,13 +36,13 @@ function Home() {
                     {/* Content */}
                     <div className='absolute z-30 h-full w-full flex items-center'>
                         <div className='p-20 max-md:p-10 flex flex-col gap-6 relative'>
-                            <div className='text-6xl max-md:text-5xl max-[380px]:!text-4xl text-white'>
+                            <h1 className='text-6xl max-md:text-5xl max-[380px]:!text-4xl text-white'>
                                 GÜVEN VE KALİTE,<br />
                                 BAŞARININ TEMELİ
-                            </div>
-                            <div className='text-xl max-[380px]:!text-lg text-white'>
+                            </h1>
+                            <h2 className='text-xl max-[380px]:!text-lg text-white'>
                                 Ekip İnşaat güvencesiyle geleceğe yön veren projelerle yanınızdayız.
-                            </div>
+                            </h2>
                             <button
                                 onClick={handleContactClick}
                                 className='bg-[#EE1B24] cursor-pointer z-40 px-6 py-4 w-fit text-lg rounded text-white hover:bg-red-700 transition-colors mt-4 relative'

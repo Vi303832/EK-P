@@ -3,9 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import 'swiper/css/pagination';
-import slide1 from "../assets/Slider1/slide1.png";
-import slide2 from "../assets/Slider1/slide2.png";
-import slide3 from "../assets/Slider1/slide3.jpeg";
 
 const SliderBg = () => {
     const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -16,16 +13,16 @@ const SliderBg = () => {
     // Slider için görsel yapılandırması
     const slideData = [
         {
-            src: slide1,
+            src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959141/slide2_bnemt7.png",
             alt: "Slide 1",
             preload: true  // İlk görsel için preload özelliği
         },
         {
-            src: slide2,
+            src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959139/slide1_czoaq2.png",
             alt: "Slide 2"
         },
         {
-            src: slide3,
+            src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959138/slide3_dfkqkr.jpg",
             alt: "Slide 3"
         }
     ];

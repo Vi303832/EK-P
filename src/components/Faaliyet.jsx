@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
-import men from "../assets/men.jpg"
+
 import { useNavigate } from 'react-router-dom';
 
 function Faaliyet() {

@@ -51,12 +51,12 @@ function Header() {
                     </div>
 
                     <div className='flex items-center flex-col  justify-center'>
-                        <a
+                        <div
                             onClick={() => setdisplay(!display)}
                             className='cursor-pointer '
                         >
                             Projeler
-                        </a>
+                        </div>
                         <div className={`flex  items-center overflow-hidden transition-all duration-300 delay-100 cursor-pointer ${display ? "h-20 mt-5 " : "h-0 mt-0"}`}
                             onClick={() => handlenavigate("/BitenProjeler")}
                         >
@@ -89,7 +89,10 @@ function Header() {
 
             <div className='w-full h-full flex '>
                 <div className='h-[120%] flex justify-center mx-20 max-md:mx-10'>
-                    <img src={Logo} onClick={() => handlenavigate("/")} className='h-full object-cover cursor-pointer w-[100px]' />
+                    <img src={Logo}
+                        alt='Ekip İnşaat Logo'
+
+                        onClick={() => handlenavigate("/")} className='h-full object-cover cursor-pointer w-[100px]' />
                 </div>
                 <div className='relative  right-10 max-xl:top-5 w-full max-md:top-8 '>
                     <div className='justify-end flex max-md:items-center '>
@@ -117,12 +120,12 @@ function Header() {
                             Anasayfa
                         </div>
                         <div className='flex items-end flex-col justify-center'>
-                            <a
+                            <div
                                 onClick={() => setdisplay(!display)}
                                 className='cursor-pointer'
                             >
                                 Projeler
-                            </a>
+                            </div>
                             <div className={`flex items-center overflow-hidden transition-all duration-300 delay-100 cursor-pointer ${display ? "h-15 " : "h-0"}`}
                                 onClick={() => handlenavigate("/BitenProjeler")}
                             >
