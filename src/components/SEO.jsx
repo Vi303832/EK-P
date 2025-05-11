@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 
 function SEO({ title, description, keywords, canonicalUrl, ogImage }) {
-    const defaultTitle = 'Ekip İnşaat | Güven ve Kalite';
-    const defaultDescription = 'Ekip İnşaat - Güven ve kalite, başarının temeli. Geleceğe yön veren projelerle yanınızdayız.';
-    const defaultKeywords = 'Ekip İnşaat, inşaat, projeler, biten projeler, devam eden projeler, gelecek projeler, Türkiye';
+    const defaultTitle = 'Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat | Güven ve Kalite';
+    const defaultDescription = 'Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat - Güven ve kalite, başarının temeli. Boya ve inşaat sektöründe lider projelerle yanınızdayız.';
+    const defaultKeywords = 'Ekip İnşaat, Ekip Boya, Ekip Boya İnşaat, inşaat, boya, projeler, biten projeler, devam eden projeler, gelecek projeler, Türkiye';
     const siteUrl = 'https://www.ekipboya.com/'; // Updated domain
 
     return (

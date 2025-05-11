@@ -16,10 +16,10 @@ const SEOService = {
      */
     updateAll({ title, description, keywords, ogTitle, ogDescription, ogImage, canonicalUrl }) {
         // Update page title
-        document.title = title || 'Ekip İnşaat';
+        document.title = title || 'Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat';
 
         // Update meta description
-        this.updateMetaTag('description', description || 'Ekip İnşaat - Güven ve kalite, başarının temeli.');
+        this.updateMetaTag('description', description || 'Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat - Güven ve kalite, başarının temeli. Boya ve inşaat sektöründe lider projelerle yanınızdayız.');
 
         // Update meta keywords
         if (keywords) {
@@ -27,8 +27,8 @@ const SEOService = {
         }
 
         // Update Open Graph tags
-        this.updateMetaTag('og:title', ogTitle || title || 'Ekip İnşaat');
-        this.updateMetaTag('og:description', ogDescription || description || 'Ekip İnşaat - Güven ve kalite, başarının temeli.');
+        this.updateMetaTag('og:title', ogTitle || title || 'Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat');
+        this.updateMetaTag('og:description', ogDescription || description || 'Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat - Güven ve kalite, başarının temeli. Boya ve inşaat sektöründe lider projelerle yanınızdayız.');
         if (ogImage) {
             this.updateMetaTag('og:image', ogImage);
         }

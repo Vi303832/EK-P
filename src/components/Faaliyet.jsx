@@ -72,7 +72,7 @@ function Faaliyet() {
                 </div>
 
                 <div className='w-full md:w-[95%] lg:w-full text-base md:text-lg opacity-60'>
-                    Ekip Grup İnşaat, 2012 yılından bu yana Türkiye genelinde, özellikle Bursa'da hayata geçirdiği nitelikli konut projeleriyle güvenilir bir marka haline gelmiştir. Kaliteli yaşam alanları üretme vizyonuyla yola çıkan firmamız; zamanında teslimat, müşteri memnuniyeti ve ekonomik çözümler sunma prensiplerini benimsemiştir.
+                    Ekip Boya İnşaat olarak; 2012 yılından bu yana Türkiye genelinde, özellikle Bursa'da hayata geçirdiğimiz nitelikli konut projeleriyle güvenilir bir marka haline geldik. Kaliteli yaşam alanları üretme vizyonuyla yola çıkan firmamız; zamanında teslimat, müşteri memnuniyeti ve ekonomik çözümler sunma prensiplerini benimsemiştir.
                 </div>
 
                 <div onClick={() => navigate("/Hakkımızda")} className='bg-lacivert px-6 md:px-10 py-2 w-fit text-base md:text-lg rounded cursor-pointer text-white hover:bg-opacity-90 transition-all'>

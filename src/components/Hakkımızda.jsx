@@ -48,7 +48,7 @@ function Hakkımızda() {
                     <div className='space-y-6'>
                         <h2 className='text-3xl font-bold text-gray-800'>Ekip Grup İnşaat</h2>
                         <p className='text-gray-600 leading-relaxed'>
-                            Ekip Grup İnşaat, Türkiye'nin farklı bölgelerinde, özellikle Bursa'da hayata geçirdiği yüksek kaliteli konut projeleriyle sektörde güçlü bir konum edinmiştir. 2012 yılında faaliyetlerine başlayan şirketimiz; Ekip Boya, Ekip Park Geçit, Ekip Park Yunuseli 1 ve 2 ile Ekip Park Kestel gibi projelerle konut üretiminde güvenilir bir marka haline gelmiştir.
+                            Ekip Grup İnşaat, Türkiye'nin farklı bölgelerinde, özellikle Bursa'da hayata geçirdiği yüksek kaliteli konut projeleriyle sektörde güçlü bir konum edinmiştir. 2012 yılında faaliyetlerine başlayan şirketimiz; Ekip Boya, Ekip Park Geçit, Ekip Park Yunuseli 1 ve 2 ile Ekip Park Kestel gibi projelerle konut üretiminde güvenilir bir marka haline gelmiştir. Ayrıca Ekip Boya markamızla da sektörde hizmet vermekteyiz.
                         </p>
                         <p className='text-gray-600 leading-relaxed'>
                             Kuruluşumuzdan bu yana, müşteri memnuniyetini ön planda tutarak, zamanında teslimat ve ekonomik çözümler sunmayı ilke edindik. Kaliteli yaşam alanları üretme vizyonumuz, uzman kadromuz ve yenilikçi yaklaşımlarımızla sektörde fark yaratmaya devam ediyoruz.

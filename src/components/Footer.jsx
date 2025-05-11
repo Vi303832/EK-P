@@ -35,6 +35,7 @@ function Footer() {
                         <p className='text-gray-300 text-sm  pb-1 w-fit hover:text-white transition-colors'>
                             <span className="underline ">Güvenilir İnşaat Çözümleri</span>
                         </p>
+                        <p className='text-gray-400 text-xs'>Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat ile güvenilir çözümler.</p>
                     </div>
 
                     {/* Quick Links */}
@@ -108,7 +109,7 @@ function Footer() {
 
                 <div className="mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-400 text-sm">
-                        © {new Date().getFullYear()} Ekip Grup İnşaat. Tüm Hakları Saklıdır.
+                        © {new Date().getFullYear()} Ekip Grup İnşaat, Ekip Boya ve Ekip Boya İnşaat. Tüm Hakları Saklıdır.
                     </p>
                     <div className="mt-4 md:mt-0">
                         <p className="text-gray-500 text-xs">

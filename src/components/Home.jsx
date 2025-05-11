@@ -18,8 +18,8 @@ function Home() {
     return (
         <div className='min-h-screen w-full overflow-hidden font-Poppins'>
             <SEO
-                title="Ekip İnşaat | Ana Sayfa"
-                description="Ekip İnşaat - Güven ve kalite, başarının temeli. Geleceğe yön veren projelerle yanınızdayız."
+                title="Ekip Boya İnşaat | Profesyonel Boya ve İnşaat Hizmetleri"
+                description="Ekip Boya ve Ekip İnşaat ile profesyonel boya, tadilat ve inşaat hizmetleri. Kaliteli işçilik, uygun fiyat ve müşteri memnuniyeti."
                 canonicalUrl="/"
             />
             {/*Landing*/}
@@ -41,7 +41,7 @@ function Home() {
                                 BAŞARININ TEMELİ
                             </div>
                             <div className='text-xl max-[380px]:!text-lg text-white'>
-                                Geleceğe yön veren projelerle yanınızdayız
+                                Ekip İnşaat güvencesiyle geleceğe yön veren projelerle yanınızdayız.
                             </div>
                             <button
                                 onClick={handleContactClick}
