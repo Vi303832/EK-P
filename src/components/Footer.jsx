@@ -88,9 +88,8 @@ function Footer() {
                             <div className="flex items-start space-x-3">
                                 <FaMapMarkerAlt className="text-[#EE1B24] mt-1 flex-shrink-0" aria-hidden="true" />
                                 <address className="not-italic text-sm text-gray-300">
-                                    Camiikebir Mahallesi,<br />
-                                    Kasımpaşa Tabakhane Cd.<br />
-                                    No:17A, 34440 Beyoğlu/İstanbul
+                                    Geçit Mh. Gökalp Sok. <br />
+                                    No: 1/1 Ekip İş Merkezi, Bursa
                                 </address>
                             </div>
                             <div className="flex items-center space-x-3">
