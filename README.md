@@ -1,6 +1,6 @@
 # Ekip İnşaat - Kurumsal Web Sitesi
 
-🔗 [Canlı Demo](https://www.ekipboya.com/)
+🔗 [Website](https://www.ekipboya.com/)
 
 ## Proje Açıklaması
 
@@ -41,9 +41,11 @@ Bu proje JavaScript ile geliştirilmiştir. Node.js 18+ versiyonu önerilmektedi
 
 ## Ekran Görüntüleri
 
+![screencapture-ekipboya-2025-05-14-09_59_52](https://github.com/user-attachments/assets/385347ba-0f0a-4177-ac98-00d4daddf127)
 
-![screencapture-ekip-beta-vercel-app-2025-04-28-14_08_58](https://github.com/user-attachments/assets/2f376875-29ea-4857-93fe-18cb91fa1041)
+## Lisans
 
+Tüm hakları saklıdır. Bu proje yalnızca portföy gösterimi için paylaşılmıştır.
 
 
 
