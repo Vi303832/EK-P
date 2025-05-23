@@ -3,7 +3,7 @@ import Biten from "./Biten";
 import Devam from "./Devam";
 import Gelecek from "./Gelecek";
 import { useEffect, useState, useRef } from "react";
-import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight, FaCalendarAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaChevronLeft, FaChevronRight, FaCalendarAlt, FaTimes } from 'react-icons/fa';
 import NotFound from "./NotFound";
 import SEO from './SEO';
 
@@ -12,6 +12,7 @@ const Proje = () => {
     const [selectedImage, setSelectedImage] = useState(0);
     const navigate = useNavigate();
     const sliderRef = useRef(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -100,7 +101,8 @@ const Proje = () => {
                                 <img
                                     src={p.images ? p.images[selectedImage] : p.img}
                                     alt={p.isim}
-                                    className="w-full h-[500px] md:h-[550px] object-cover"
+                                    className="w-full h-60 md:h-[500px] lg:h-[550px] object-cover cursor-pointer transition-all duration-200"
+                                    onClick={() => setIsModalOpen(true)}
                                 />
 
                             </div>
@@ -176,6 +178,25 @@ const Proje = () => {
                     </div>
                 </div>
             </div>
+
+            {isModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+                    <div className="relative max-w-full max-h-full flex items-center justify-center">
+                        <button
+                            className="absolute top-2 right-2 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-80 z-10"
+                            onClick={() => setIsModalOpen(false)}
+                            aria-label="Kapat"
+                        >
+                            <FaTimes size={24} />
+                        </button>
+                        <img
+                            src={p.images ? p.images[selectedImage] : p.img}
+                            alt={p.isim}
+                            className="max-h-[80vh] max-w-[90vw] object-contain rounded shadow-lg"
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
