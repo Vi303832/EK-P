@@ -4,135 +4,48 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import 'swiper/css/pagination';
 
+const slideData = [
+    {
+        src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959141/slide2_bnemt7.png",
+        alt: "Slide 1"
+    },
+    {
+        src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959139/slide1_czoaq2.png",
+        alt: "Slide 2"
+    },
+    {
+        src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959138/slide3_dfkqkr.jpg",
+        alt: "Slide 3"
+    }
+];
+
 const SliderBg = () => {
     const [imagesLoaded, setImagesLoaded] = useState(false);
     const [loadedCount, setLoadedCount] = useState(0);
-    const [images, setImages] = useState([]);
-    const swiperRef = useRef(null);
-
-    // Slider için görsel yapılandırması
-    const slideData = [
-        {
-            src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959141/slide2_bnemt7.png",
-            alt: "Slide 1",
-            preload: true  // İlk görsel için preload özelliği
-        },
-        {
-            src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959139/slide1_czoaq2.png",
-            alt: "Slide 2"
-        },
-        {
-            src: "https://res.cloudinary.com/dwruhrrkm/image/upload/v1746959138/slide3_dfkqkr.jpg",
-            alt: "Slide 3"
-        }
-    ];
 
     useEffect(() => {
-        // Önce tarayıcı önbelleğini kontrol et
-        const cachedImages = slideData.map(slide => {
-            // Tarayıcı önbelleğini kontrol et
-            const cachedImage = sessionStorage.getItem(`slider_${slide.src}`);
-            return cachedImage ? slide.src : null;
-        }).filter(Boolean);
-
-        // Eğer tüm görseller önbellekte varsa, hemen yükle
-        if (cachedImages.length === slideData.length) {
-            setImages(slideData.map(slide => slide.src));
-            setImagesLoaded(true);
-            return;
-        }
-
-        // En önemli görseli en önce yükle ve diğerlerini paralel olarak yükle
-        const preloadMainImage = () => {
-            const mainSlide = slideData.find(slide => slide.preload);
-            if (mainSlide) {
-                const img = new Image();
-                img.src = mainSlide.src;
-
-                // Ana görselin yüklenme olaylarını izle
-                img.onload = () => {
-                    // Ana görsel yüklendiğinde onu göster
-                    setImages([mainSlide.src]);
-                    setLoadedCount(1);
-
-                    // Ana görsel için önbelleğe alma
-                    try {
-                        sessionStorage.setItem(`slider_${mainSlide.src}`, 'cached');
-                    } catch (e) {
-                        console.warn("Önbelleğe alma başarısız oldu:", e);
-                    }
-
-                    // Geri kalan görselleri yükle
-                    loadRemainingImages();
-                };
-
-                img.onerror = () => {
-                    console.error(`Ana görsel yüklenemedi: ${mainSlide.src}`);
-                    loadRemainingImages();
-                };
-            } else {
-                // Ana görsel yoksa, tüm görselleri yükle
-                loadRemainingImages();
-            }
-        };
-
-        const loadRemainingImages = () => {
-            // Yüklenmemiş görselleri filtrele
-            const remainingSlides = slideData.filter(slide => !slide.preload);
-
-            // Her bir görseli paralel olarak yükle
-            remainingSlides.forEach(slide => {
-                const img = new Image();
-
-                // Performans için görsel yükleme önceliğini ayarla
-                img.loading = "lazy";
-                img.decoding = "async";
-                img.src = slide.src;
-
-                img.onload = () => {
-                    setLoadedCount(prevCount => {
-                        const newCount = prevCount + 1;
-
-                        // Tüm görseller tamamen yüklendiğinde
-                        if (newCount >= slideData.length) {
-                            setImagesLoaded(true);
-                        }
-
-                        // Önbelleğe alma
-                        try {
-                            sessionStorage.setItem(`slider_${slide.src}`, 'cached');
-                        } catch (e) {
-                            console.warn("Önbelleğe alma başarısız oldu:", e);
-                        }
-
-                        // Mevcut görsellere ekleme yap
-                        setImages(prevImages => [...prevImages, slide.src]);
-
-                        return newCount;
-                    });
-                };
-
-                img.onerror = () => {
-                    console.error(`Görsel yüklenemedi: ${slide.src}`);
-                    setLoadedCount(prevCount => prevCount + 1);
-                };
-            });
-        };
-
-        // Ana görsel yükleme işlemini başlat
-        preloadMainImage();
-
-        // Komponent unmount olduğunda temizlik yap
-        return () => {
-            // Yükleme işlemleri iptal edilemez, ancak referansları temizleyebiliriz
-            setImages([]);
-            setImagesLoaded(false);
-            setLoadedCount(0);
-        };
+        let isMounted = true;
+        let count = 0;
+        slideData.forEach(slide => {
+            const img = new window.Image();
+            img.src = slide.src;
+            img.onload = () => {
+                count += 1;
+                if (isMounted && count === slideData.length) {
+                    setImagesLoaded(true);
+                }
+            };
+            img.onerror = () => {
+                count += 1;
+                if (isMounted && count === slideData.length) {
+                    setImagesLoaded(true);
+                }
+            };
+        });
+        return () => { isMounted = false; };
     }, []);
 
-    // Yükleme ekranı
-    if (!images.length) {
+    if (!imagesLoaded) {
         return (
             <div className="h-full w-full bg-gray-800 flex flex-col items-center justify-center">
                 <div className="relative w-20 h-20">
@@ -160,38 +73,25 @@ const SliderBg = () => {
 
     return (
         <Swiper
-            ref={swiperRef}
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             pagination={{ clickable: true }}
             spaceBetween={0}
             loop={true}
             className="h-full w-full"
-            preloadImages={false}
-            updateOnImagesReady={true}
         >
-            {images.map((image, index) => {
-                const slideInfo = slideData.find(slide => slide.src === image) || {};
-
-                return (
-                    <SwiperSlide key={index}>
-                        <img
-                            src={image}
-                            alt={slideInfo.alt || `Slide ${index + 1}`}
-                            className="h-full w-full object-cover"
-                            loading="eager"
-                            decoding="async"
-                            fetchpriority={index === 0 ? "high" : "auto"}
-                            onLoad={() => {
-                                // Görsel yüklendiğinde Swiper'ı güncelle
-                                if (swiperRef.current?.swiper) {
-                                    swiperRef.current.swiper.update();
-                                }
-                            }}
-                        />
-                    </SwiperSlide>
-                );
-            })}
+            {slideData.map((slide, index) => (
+                <SwiperSlide key={index}>
+                    <img
+                        src={slide.src}
+                        alt={slide.alt}
+                        className="h-full w-full object-cover"
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority={index === 0 ? "high" : "auto"}
+                    />
+                </SwiperSlide>
+            ))}
         </Swiper>
     );
 };
