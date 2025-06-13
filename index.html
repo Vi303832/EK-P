@@ -19,6 +19,35 @@
 
   <meta name="google-site-verification" content="YdioMZ_V79YxkkEp9uDSZTrCnGtbbc1A5gXy4YZy1so" />
   <meta property="og:locale" content="tr_TR" />
+
+  <!-- DNS Prefetch for Cloudinary -->
+  <link rel="dns-prefetch" href="//res.cloudinary.com">
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+  <!-- Preload critical slider images -->
+  <link rel="preload" as="image"
+    href="https://res.cloudinary.com/dwruhrrkm/image/upload/f_auto,q_auto,w_1920,h_1080/v1746959141/slide2_bnemt7.png"
+    fetchpriority="high">
+  <link rel="preload" as="image"
+    href="https://res.cloudinary.com/dwruhrrkm/image/upload/f_webp,q_auto,w_1920,h_1080/v1746959141/slide2_bnemt7.png"
+    type="image/webp" fetchpriority="high">
+
+  <!-- Preload remaining slider images with lower priority -->
+  <link rel="preload" as="image"
+    href="https://res.cloudinary.com/dwruhrrkm/image/upload/f_auto,q_auto,w_1920,h_1080/v1746959139/slide1_czoaq2.png"
+    fetchpriority="low">
+  <link rel="preload" as="image"
+    href="https://res.cloudinary.com/dwruhrrkm/image/upload/f_auto,q_auto,w_1920,h_1080/v1746959138/slide3_dfkqkr.jpg"
+    fetchpriority="low">
+
+  <!-- Preload mobile optimized images -->
+  <link rel="preload" as="image"
+    href="https://res.cloudinary.com/dwruhrrkm/image/upload/f_auto,q_auto,w_768,h_432/v1746959141/slide2_bnemt7.png"
+    media="(max-width: 768px)" fetchpriority="high">
+
+  <!-- Preload critical CSS and JS -->
+  <link rel="preload" href="/src/main.jsx" as="script" type="module">
+
   <title>Ekip İnşaat, Ekip Boya ve Ekip Boya İnşaat | Güven ve Kalite</title>
 </head>
 
